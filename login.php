@@ -7,9 +7,8 @@
 	<meta charset="utf-8">
 
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="icon" type="imagem/png" href="img/logo.png" />
+	<link rel="shortcut icon" href="img/logoF.png" />
 	<style type="text/css">
-	}
 
 	body{
 		background-repeat:no-repeat;
@@ -28,26 +27,23 @@
 	<div id="tamanhoContainer" style="margin-top: 100px; background-color: #696969; border-radius: 20px; height: 45%; width: 40%" class="container">
 		<img src="img/logo.png" style="width: 60%; margin-top: 5%">
 		<br>
-		<h4><b>Desmentindo Distâncias</b></h4>
+		<h4><b style="color: white;">Desmentindo Distâncias</b></h4>
 		<div  style=" width: 70%;">
 			<form class="px-4 py-3" method="post" action="php/valida.php">
-				<div class="form-group">
-					
-					<label  style="color: white;"><img src="img/user.png" style="height: 50px; width: 50px; transform: translateX(-20px);"> Nome de Usuário: </label>
-					<input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Nome de Usuário:" name="nomeu">
-				</div>
 
 				<div class="form-group">
 					<center><label  style="color: white; "><img src="img/email.png" style="height: 50px; width: 50px; transform: translateX(-70px);">E-mail</label></center>
 					<input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="E-mail:" name="email">
 
 				</div>
+
 				<div class="slogan" style="position: absolute;"><b></b></div>
 				<div class="form-group">
 					<center><label for="exampleDropdownFormPassword1"  style="color: white;"><img src="img/senha.png" style="height: 50px; width: 50px;  transform: translateX(-70px);">Senha</label></center>
 					<input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha" name="senha">
 
 				</div>
+
 				<button type="submit" class="btn btn-primary" style="width: 70%;">Entrar</button>
 			</form>
 			</center>

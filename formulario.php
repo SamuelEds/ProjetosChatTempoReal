@@ -83,11 +83,10 @@
 
           <div>
             <div style="text-align: right;">
-              <a href="index.php" role="button" class="btn btn-sm btn-outline-dark">Voltar</a>
-              <button type="submit" id="botao" class="btn btn-sm btn-outline-success">Cadastrar</button>
-
+              <a href="index.php" role="button" class="btn btn-outline-dark btn-lg">Voltar</a>
+              <button type="reset" id="botao" class="btn btn-outline-danger btn-lg">Resetar</button>
+              <button type="submit" id="botao" class="btn btn-outline-success btn-lg">Cadastrar</button>
             </form>
-
           </div>
         </div>
       </form>
