@@ -13,27 +13,49 @@ if((isset($_POST['email'])) && (isset($_POST['senha']))){
 
 	//$senha = md5($senha);
 
-	$sql = "SELECT * FROM usuarios WHERE email = '$usuario'";
+
+
+	$sql = "SELECT * FROM usuarios WHERE email = '$usuario' and senha = '$senha' ";
 	$result_usuario = mysqli_query($con,$sql);
 
 	while ($rows = mysqli_fetch_assoc($result_usuario)) {
 
 		$nomeu = $rows['nomeusuario'];
+		$senha1 = $rows['senha'];
+		
 
 	}
 
-	if(empty($result_usuario)){
-
-		echo "Deu errado";
-	}else if(!empty($result_usuario)){
+	if(isset($nomeu) && isset($senha1)){
 
 		$_SESSION['email'] = $email;
 		$_SESSION['nome']  = $nomeu;
 
 		header("Location: /ProjetosChatTempoReal/index.php");
+
+	}else{
+
+		echo "Deu errado";
+
+	}
+
+	/*if(empty($result_usuario)){
+
+		echo "Deu errado";
+	}else if(!empty($result_usuario)){
+
+		$_SESSION['email'] = $email;
+		//$_SESSION['nome']  = $nomeu;
+
+		
+		echo $nomeu;
+
+		echo "Sla";
+
+		//header("Location: /ProjetosChatTempoReal/index.php");
 	}else{
 		echo "Deu errado denovo";
-	}
+	}*/
 
 }else{
 	echo "Deu errado";
