@@ -1,15 +1,15 @@
  <div class="content">
       </div>
       <footer class="footer">
-      	<div class="credits" style="border-radius: 20px;">
+      	<div class="credits" style="border-radius: 20px; width: 500px;">
       		<h3>Desenvolvedores</h3>
-      			<i><b>Samuel Edson (Códigos)
+      			<i><b>Samuel Edson (samueledshotmailgm@gmail.com)
       			<br>
-      			Yara Karen (tela cadastro)
+      			Yara Karen (yrakarn@gmail.com)
       			<br>
-      			João Vitor (tela perfil)
+      			João Vitor (joovctr@gmail.com)
       			<br>
-      			Denis Braga (suporte e tela index)</i></b>
+      			Denis Braga (gamesfoda200@gmail.com)</i></b>
       	</div>
       	<div class="copyright" style="border-radius: 20px;">
       		<br>

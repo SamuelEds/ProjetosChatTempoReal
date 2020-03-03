@@ -10,6 +10,7 @@ setcookie('nome',$nome);
 	
 	<title>Chat</title>
 	<link rel="shortcut icon" href="img/logoF.png" />
+	<meta charset="utf-8">
 
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 
@@ -18,12 +19,10 @@ setcookie('nome',$nome);
 	<script type="text/javascript" src="js/jquery-form.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 
-	<style>
-
-	body{
+	<style type="text/css">
+		body{
 
 		background:url("./img/back.jpg");
-		background-size:100%;
 		background-repeat:no-repeat;
 		background-attachment: fixed;
 
@@ -162,7 +161,21 @@ setcookie('nome',$nome);
 		background-size: 100%;
 	}
 
-</style>
+	::-webkit-scrollbar{
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track{
+		background-color: rgba(255,255,255,0.1);
+	}
+
+	::-webkit-scrollbar-thumb{
+		background-color: #11171a;
+		border-radius: 10px;
+	}
+	</style>
+
+
 
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -202,6 +215,8 @@ setcookie('nome',$nome);
       }
       //-->
   </script>
+
+
 </head>
 <body onload="Rolar();">
 
@@ -237,8 +252,6 @@ setcookie('nome',$nome);
 
 		<form method="POST" action="enviar.php" id="meufrm">
 			<input type="text" name="mensagem" id="mensagem" placeholder="Digite uma mensagem..." maxlength="103" autocomplete="off" style="background-color: black;" />
-			<br>
-			<input type="submit" name="enviar" value="Enviar">
 		</form>
 
 		<?php require_once("footer.php")?>

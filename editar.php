@@ -68,8 +68,8 @@ while($row = mysqli_fetch_assoc($result)){
       <input type="text" class="form-control" placeholder="Insira seu País" value="<?php echo($row['pais']);?>" id="validationDefault03" name="pais">
     </div>
     <div class="col-md-3 mb-3">
-              <label for="validationDefault04">Gênero</label>
-              <select class="custom-select" id="validationDefault04" name="genero">
+              <label for="validationDefault04">Gênero *</label>
+              <select class="custom-select" id="validationDefault04" name="genero" required>
                 <option selected disabled ></option>
                   <option>M</option>
                   <option>F</option>
@@ -95,8 +95,36 @@ while($row = mysqli_fetch_assoc($result)){
        
 <div>
       <div style="text-align: right;">
-        <a href="perfil.php" role="button" class="btn btn-sm btn-outline-dark">Voltar</a>
-        <button type="submit" id="botao" class="btn btn-sm btn-outline-success">Atualizar</button>
+              
+              
+        <a href="perfil.php" role="button" class="btn btn-lg btn-outline-dark">Voltar</a>
+        <!---<button type="submit" id="botao" class="btn btn-lg btn-outline-success">Atualizar</button>-->
+
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#exampleModal">
+  Atualizar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmar Edição</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: center; font-size: 20px;">
+        Deseja salvar as alterações ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
       
         </form>
 

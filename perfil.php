@@ -16,11 +16,16 @@ while($row = mysqli_fetch_assoc($result)){
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<meta charset="utf-8">
+		
 		<title>Perfil</title>
+		<meta charset="utf-8">
+
 		<link rel="shortcut icon" href="img/logoF.png" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 		rel="stylesheet">
+
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<script type="text/javascript" src="js/bootstrap.js"></script>
 
 		<style type="text/css">
 		body{
@@ -121,61 +126,94 @@ while($row = mysqli_fetch_assoc($result)){
 	<br>
 	<br>
 	<center>
+	</center>
+	<center>
+		<div class="card">
+			<div class="card-header" style="background-color: black;"><center><h4></h4></center></div>
 
 
-
-	</div>
-</center>
-<center>
-	<div class="card">
-		<div class="card-header" style="background-color: grey;"><center><h4></h4></center></div>
-		<div class="card-body" style="background-color: black;">
-			<h5 class="card-title" style="color: white;"></h5>
-			<p class="card-text" style="color: white;">
-				<img class="minhafoto" src="<?php if($row['foto'] != null){echo('/ProjetosChatTempoReal/uploads/'.$row['foto']);}else{ echo('/ProjetosChatTempoReal/img/login.png');} ?>">
+			<div class="card-body" style="background-color: black;">
+				<h5 class="card-title" style="color: white;"></h5>
+				<p class="card-text" style="color: white;">
+					<img class="minhafoto" src="<?php if($row['foto'] != null){echo('/ProjetosChatTempoReal/uploads/'.$row['foto']);}else{ echo('/ProjetosChatTempoReal/img/login.png');} ?>">
+					<br>
+					<h2 style="color: white;"><?php if($row['nomecompleto'] != ""){ echo $row['nomecompleto'];} else{ echo "-";} ?></h2>
+					<form method="post" action="uploadFoto.php" enctype="multipart/form-data">
+						<input type="file" id="file" name="img">
+						<label for="file" style="width: 200px;">
+							<i class="material-icons">
+							</i> &nbsp;
+							Mudar Imagem
+						</label>
+						<input type="submit" value="Salvar Foto" id="botaoEnviarFoto">
+					</form>
+				</p>
 				<br>
-				<h2 style="color: white;"><?php if($row['nomecompleto'] != ""){ echo $row['nomecompleto'];} else{ echo "-";} ?></h2>
-				<form method="post" action="uploadFoto.php" enctype="multipart/form-data">
-					<input type="file" id="file" name="img">
-					<label for="file" style="width: 200px;">
-						<i class="material-icons">
-						</i> &nbsp;
-						Mudar Imagem
-					</label>
-					<input type="submit" value="Salvar Foto" id="botaoEnviarFoto">
-				</form>
-			</p>
-			<br>
-			<br>
+				<br>
+			</div>
+
+
 		</div>
-	</div>
-	<div class="card-header" style="background-color: grey; color: darkgrey; text-align: left;">
-		<h3 style="color: white;">
-			Nome Completo: <?php if($row['nomecompleto'] != ""){ echo $row['nomecompleto'];} else{ echo "-";} ?>
-			<br>
-			Nome Usuário: <?php echo $row['nomeusuario']; ?>
-			<br>
-			Sexo: <?php if($row['genero'] != ""){ echo $row['genero'];} else{ echo "-";} ?>
-			<br>
-			Localização: <?php if($row['pais'] != ""){ echo $row['pais'];} else{ echo "-";} ?>
-			<br>
-			Email: <?php if($row['email'] != ""){ echo $row['email'];} else{ echo "-";} ?>
-			<br>
-			<br>
-			<a href="editar.php"><input type="button" name="editar" class="btn btn-dark" value="Editar sua Conta"></a>
-			<?php echo "<a href='./php/_exclui_usu.php' data-confirm='Tem certeza disso (não podemos ajudar se mudar de ideia depois!) ?'><input type='button' name='apagar' class='btn btn-danger' value='Apagar sua Conta'></a>"; ?>
-		</h3>
-	</div>
-</div>
-</div>
-</div>
+
+		<div class="card-header" style="background-color: black; color: darkgrey; text-align: left;">
+			<h3 style="color: white;">
+				Nome Completo: <?php if($row['nomecompleto'] != ""){ echo $row['nomecompleto'];} else{ echo "-";} ?>
+				<br>
+				Nome Usuário: <?php echo $row['nomeusuario']; ?>
+				<br>
+				Sexo: <?php if($row['genero'] != ""){ echo $row['genero'];} else{ echo "-";} ?>
+				<br>
+				Localização: <?php if($row['pais'] != ""){ echo $row['pais'];} else{ echo "-";} ?>
+				<br>
+				Email: <?php if($row['email'] != ""){ echo $row['email'];} else{ echo "-";} ?>
+				<br>
+				<br>
+				<a href="editar.php"><input type="button" name="editar" class="btn btn-dark" value="Editar sua Conta"></a>
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalExemplo">
+					Exluir dados da Conta
+				</button>
+
+			</h3>
+		</div>
+
+		
+
+		<!-- Modal -->
+		<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						Tem certeza? (Não terá mais volta)
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+						<a href="php/_exclui_usu.php"> <button type="button" class="btn btn-primary">Confirmar</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</center>
+
 
 <?php } ?>
-</center>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="./js/confirm.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

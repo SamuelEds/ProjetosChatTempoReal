@@ -35,7 +35,7 @@
 				<form class="px-4 py-3" method="post" action="php/valida.php">
 
 					<div class="form-group">
-						<center><label  style="color: white; font-size: 30px; font-family: 'Fira Code' ;"><img src="img/email.png" style="height: 50px; width: 50px; transform: translateX(-70px);">EMAIL:</label></center>
+						<center><label  style="color: white; font-size: 30px; font-family: 'Fira Code' ;"><img src="img/email.png" style="height: 80px; width: 80px; transform: translateX(-70px);">EMAIL:</label></center>
 						<input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="E-mail:" name="email">
 
 					</div>
@@ -43,7 +43,7 @@
 					<div class="slogan" style="position: absolute;"><b></b></div>
 
 					<div class="form-group">
-						<center><label for="exampleDropdownFormPassword1"  style="color: white; font-size: 30px; font-family: 'Fira Code' ;"><img src="img/senha.png" style="height: 50px; width: 50px;  transform: translateX(-70px);">SENHA:</label></center>
+						<center><label for="exampleDropdownFormPassword1"  style="color: white; font-size: 30px; font-family: 'Fira Code' ;"><img src="img/senha.png" style="height: 80px; width: 80px;  transform: translateX(-70px);">SENHA:</label></center>
 						<input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha" name="senha">
 
 					</div>
