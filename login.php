@@ -22,34 +22,37 @@
 
 	<?php require_once("php/header.php") ?>
 	<center>
-	
 
-	<div id="tamanhoContainer" style="margin-top: 100px; background-color: #696969; border-radius: 20px; height: 45%; width: 40%" class="container">
-		<img src="img/logo.png" style="width: 60%; margin-top: 5%">
+		<img src="img/logo.png" style="width: 20%; margin-top: 5%; ">
 		<br>
-		<h4><b style="color: white;">Desmentindo Distâncias</b></h4>
-		<div  style=" width: 70%;">
-			<form class="px-4 py-3" method="post" action="php/valida.php">
+		<h4><b style="color: white; font-size: 50px; text-shadow: 5px 4px 0px black;">Desmentindo Distâncias</b></h4>
+		<div id="tamanhoContainer" style="margin-top: 40px; background-color: #696969; border-radius: 20px; height: 45%; width: 60%" class="container">
 
-				<div class="form-group">
-					<center><label  style="color: white; "><img src="img/email.png" style="height: 50px; width: 50px; transform: translateX(-70px);">E-mail</label></center>
-					<input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="E-mail:" name="email">
+			<br>
+			
+			<div  style=" width: 100%;">
 
-				</div>
+				<form class="px-4 py-3" method="post" action="php/valida.php">
 
-				<div class="slogan" style="position: absolute;"><b></b></div>
-				<div class="form-group">
-					<center><label for="exampleDropdownFormPassword1"  style="color: white;"><img src="img/senha.png" style="height: 50px; width: 50px;  transform: translateX(-70px);">Senha</label></center>
-					<input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha" name="senha">
+					<div class="form-group">
+						<center><label  style="color: white; font-size: 30px; font-family: 'Fira Code' ;"><img src="img/email.png" style="height: 50px; width: 50px; transform: translateX(-70px);">EMAIL:</label></center>
+						<input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="E-mail:" name="email">
 
-				</div>
+					</div>
 
-				<button type="submit" class="btn btn-primary" style="width: 70%;">Entrar</button>
-			</form>
+					<div class="slogan" style="position: absolute;"><b></b></div>
+
+					<div class="form-group">
+						<center><label for="exampleDropdownFormPassword1"  style="color: white; font-size: 30px; font-family: 'Fira Code' ;"><img src="img/senha.png" style="height: 50px; width: 50px;  transform: translateX(-70px);">SENHA:</label></center>
+						<input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha" name="senha">
+
+					</div>
+
+					<button type="submit" class="btn btn-primary btn-lg" style="width: 70%;">Entrar</button>
+
+				</form>
 			</center>
 			<br>
-				
-
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

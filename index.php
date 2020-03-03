@@ -236,7 +236,7 @@ setcookie('nome',$nome);
 		<br>
 
 		<form method="POST" action="enviar.php" id="meufrm">
-			<input type="text" name="mensagem" id="mensagem" placeholder="Digite uma mensagem..." maxlength="54" autocomplete="off" style="background-color: black;" />
+			<input type="text" name="mensagem" id="mensagem" placeholder="Digite uma mensagem..." maxlength="103" autocomplete="off" style="background-color: black;" />
 			<br>
 			<input type="submit" name="enviar" value="Enviar">
 		</form>
