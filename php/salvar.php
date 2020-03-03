@@ -30,7 +30,7 @@ if($senha == $repitasenha){
 			$_SESSION['nome']  = $nomeu;
 
 			echo "<script>alert('Seja Bem Vindo(a)!');</script>";
-			echo "<script>javascript:window.location='/ProjetosChatTempoReal/index.php';</script>";
+			echo "<script>javascript:window.location='/ProjetosChatTempoReal/chat.php';</script>";
 		}else{
 			echo "<script>alert('Erro na conexão');</script>";
 			echo "<script>javascript:window.location='/ProjetosChatTempoReal/formulario.php';</script>";

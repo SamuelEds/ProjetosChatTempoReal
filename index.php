@@ -1,264 +1,171 @@
-<?php 
-session_start();
-$nome = $_SESSION['nome'];
-
-setcookie('nome',$nome);
-?>
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
 <head>
-	
-	<title>Chat</title>
-	<link rel="shortcut icon" href="img/logoF.png" />
 	<meta charset="utf-8">
-
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-
-	<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
-	<script type="text/javascript" src="js/js.js"></script>
-	<script type="text/javascript" src="js/jquery-form.js"></script>
+	<title> Global Chat - Sala de Bate-papo online</title>
+	<link rel="shortcut icon" href="img/logoF.png" />
+	<link rel="stylesheet" type="text/css" href="css/css2.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-
-	<style type="text/css">
-		body{
-
+      <link href="main.css?version=12" />
+</head>
+<body>
+<style type="text/css">
+	body{
 		background:url("./img/back.jpg");
 		background-repeat:no-repeat;
 		background-attachment: fixed;
-
 	}
-
-	#mensagens{
-		width: 950px;
-		height: 400px;
-		max-height: 400px;
-		overflow: auto;
-		overflow-x: hidden;
-		border: 7px solid #aaa;
-		border-radius: 5px;
-		padding: 8px;
-		margin: 4px;
-		color: white;
-		background:url("./img/chatbg.jpg");
-		background-repeat: no-repeat;
-		background-size: 100%;
-		background-attachment: unset;
-
-	}
-
-	input[type='text']{
-		display: block;
-		width: 850px;
-		font-size: 14px;
-		padding: 6px;
-		border: 7px solid #aaa;
-		border-radius: 5px;
-		outline: 0;
-		color: white;
-	}
-
-	p{
-		color: white;
-		text-align: left;
-		word-wrap: break-all;
-		margin-top: 5px;
-		font-family: arial,sans-serif;
-	}
-
-	b{
-		cursor: pointer;
-	}
-
-	.enviar{
-
-		transform: translateX(385px) translateY(-62.5px);
-
-	}
-
-	html {
-		height: 100%;
-	}
-	body {
-		display: flex;
-		flex-direction: column;
-		height: 100vh;
-	}
-	.content {
-		flex: 1 0 auto; 
-
-		padding: 20px;
-	}
-	.footer {
-		height: 100px;
-		flex-shrink: 0;
-		padding: 100px;
-	}
-	* {
-		box-sizing: border-box;
-	}
-	body {
-		margin: 0;
-		font: 16px Sans-Serif;
-	}
-	h1 {
-		margin: 0 0 20px 0;
-	}
-	p {
-		margin: 0 0 20px 0;
-	}
-	footer {
-		background: #363636;
-		color: white;
-	}
-
-	.credits{
-
-		float: right;
-		border: 1px solid #fff;
-		width: 340px;
-		height: 150px;
-		margin-right: 0px;
-		margin-top: -80px;
-
-	}
-
-	.copyright{
-
-		float: left;
-		border: 1px solid #fff;
-		width: 340px;
-		height: 150px;
-		margin-left: 0px;
-		margin-top: -80px;
-	}
-
-	.logoF{
-
-		margin-top: -50px;
-		height: 90px;
-
-	}
-
-	.logoFooter{
-
-		margin-top: -20px;
-
-	}
-
-	.mail{
-		width: 20px;
-	}
-
-	.regras{
-		float: left;
-		margin-right: 0px;
-		border: 1px solid #fff;
-		border-radius: 10px;
-		width: 200px;
-		height: 400px;
-		position: absolute;
-		background-color: #90EE90;
-		background-size: 100%;
-	}
-
-	::-webkit-scrollbar{
-		width: 10px;
-	}
-
-	::-webkit-scrollbar-track{
-		background-color: rgba(255,255,255,0.1);
-	}
-
-	::-webkit-scrollbar-thumb{
-		background-color: #11171a;
-		border-radius: 10px;
-	}
-	</style>
-
-
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#mensagens').load('ver.php');
-		var RefreshId = setInterval(function(){
-			$('#mensagens').load('ver.php');
-		}, 500);
-		$.ajaxSetup({cache:false});
-	});
-
-	$(document).ready(function(){
-		$("#meufrm").ajaxForm({
-			target: '#mensagens',
-			success: function(retorno){
-				$("#mensagens").html(retorno);
-				$("#mensagens").show();
-			}
-		});
-	});
-
-
-</script>
-
-<script type="text/javascript">
-	<!--
-		var i = 9999;
-		var tempo = 10;
-      var tamanho = 826; // tamanho da barra de rolagem  >> Ver arquivo Leiame.txt
-      var t;
-
-      function Rolar() {
-      	document.getElementById('mensagens').scrollTop = i;
-      	t = setTimeout("Rolar()", tempo);
+      .container{
+            margin-right: 0px;
+            height: 100px;
+            flex-shrink: 0;
+            padding: -900px;
+            margin-top: 0px;
       }
-      function Parar() {
-      	clearTimeout(t);
+      .col{
+            width: 40vw;
+            margin: 0px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 0px lightgray;
+            background-color: white;
+
       }
-      //-->
-  </script>
 
+	footer{
+            background: #363636;
+            color: white;
+      }
+      .credits{
+      	text-align: center;
+            float: right;
+            border: 1px solid #fff;
+            width: 340px;
+            height: 150px;
+            margin-right: 0px;
+            margin-top: -80px;
 
-</head>
-<body onload="Rolar();">
+      }      
+       .footer {
+            height: 100px;
+            flex-shrink: 0;
+            padding: 100px;
+            margin-top: 100px;
+      }
 
-	<?php require_once("./php/header.php")?>
-	<br>
-	<br>
-	<br>
-	<center>
-		<img src="./img/logo.png" width="250px">
-		<br>
-		<div class="regras">
-			<center>
-				<h3>REGRAS</h3>
-				<i>
-					1- Respeitar os membros (penalidade = MUTE)
-					<br>
-					<br>
-					2- Sem flood no chat (penalidade = MUTE)
-					<br>
-					<br>
-					3- Nada de comercio (penalidade = PERMA BAN)
-					<br>
-					<br>
-					4- não passe informações pessoais a desconhecidos
-					<br>
-					<br>
-					5- sem conteudo +18 (penalidade = PERMA BAN)
-				</i>
-			</center>
-		</div>
-		<div id="mensagens" onmouseover="Parar()" onmouseout="Rolar()"></div>
-		<br>
+      .copyright{
+      	text-align: center;
+            float: left;
+            border: 1px solid #fff;
+            width: 340px;
+            height: 150px;
+            margin-left: 0px;
+            margin-top: -80px;
+      }
 
-		<form method="POST" action="enviar.php" id="meufrm">
-			<input type="text" name="mensagem" id="mensagem" placeholder="Digite uma mensagem..." maxlength="103" autocomplete="off" style="background-color: black;" />
-		</form>
+      .logoF{
 
-		<?php require_once("footer.php")?>
+            margin-top: -50px;
+            height: 90px;
 
-	</center>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      }
 
+      .logoFooter{
+      		text-align: center;
+            margin-top: -20px;
+
+      }
+
+      .mail{
+            width: 20px;
+      }
+      /*Scrollbar*/
+      ::-webkit-scrollbar {
+      width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+      background-color: #11171a;
+      border-radius: 10px;
+      }
+</style>
+
+<?php require_once("php/header.php") ?>
+
+	<div class="container2">
+	<center><img class="img" src="img/logo.png"><br><br></center>
+	<center><h4> Sala de Bate-papo mundial, conecte-se de qualquer lugar do mundo e venha conversar com a gente.</h4></center><br>
+	<center><a href="formulario.php" class="botao"> Cadastre-se </a>
+	<a href="login.php" class="botao"> Login </a></center>
+	</div> 
+      <div class="container">
+      <div class="col">
+      <div class="embed-responsive embed-responsive-4by3">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9t4dc4il8i0" allowfullscreen></iframe>
+      </div>
+      </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="sobre">
+      <div style="transform: translateY(80px); margin-right: -89px;">
+      <h1>O que somos?</h1>
+      <p>Global Chat é um site que tem como objetivo oferecer um lugar agradável, dinâmico e de fácil uso onde você pode se comunicar com qualquer pessoa do mundo, quando quiser!  Desenvolvido por Denis Braga, João Victor, Samuel Edson e Yara Karen para você :) 
+      </p>
+      </div>
+      <div class="imagem">
+            <!--<img src="./img/pc2.jpg" class="img2">-->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="img/pc2.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+            <img src="img/pc3.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+            <img src="img/pc4.jpg" class="d-block w-100">
+            </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+            </div>
+
+            </div>
+      
+</div>
+
+    </div>
+
+    <?php require_once("footer.php")?>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

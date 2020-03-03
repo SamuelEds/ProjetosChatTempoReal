@@ -31,11 +31,12 @@ if((isset($_POST['email'])) && (isset($_POST['senha']))){
 		$_SESSION['email'] = $email;
 		$_SESSION['nome']  = $nomeu;
 
-		header("Location: /ProjetosChatTempoReal/index.php");
+		header("Location: /ProjetosChatTempoReal/chat.php");
 
 	}else{
 
-		echo "errado";
+		echo "<script>alert('Email ou Senha inválido!');</script>";
+		echo "<script>javascript:window.location='/ProjetosChatTempoReal/login.php';</script>";
 
 	}
 
