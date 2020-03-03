@@ -28,7 +28,7 @@ $result = mysqli_query($con,$sql);
 
 	<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;">
 		<img src="img/logo.png" style="width: 5%;">
-		<a class="btn " href="index.php">Home</a>
+		<?php if(isset($_SESSION['nome'])){ ?><a class="btn " href="index.php">Home</a><?php } ?>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
 			<span class="navbar-toggler-icon"></span>
 		</button>

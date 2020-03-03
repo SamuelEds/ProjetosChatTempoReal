@@ -13,6 +13,19 @@
     background-repeat:no-repeat;
     background-attachment: fixed;
   }
+
+  ::-webkit-scrollbar{
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track{
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background-color: #11171a;
+    border-radius: 10px;
+  }
   
 </style>
 

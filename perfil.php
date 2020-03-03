@@ -117,6 +117,19 @@ while($row = mysqli_fetch_assoc($result)){
 			background-color: lightblue;
 		}
 
+		::-webkit-scrollbar{
+			width: 10px;
+		}
+
+		::-webkit-scrollbar-track{
+			background-color: rgba(255,255,255,0.1);
+		}
+
+		::-webkit-scrollbar-thumb{
+			background-color: #11171a;
+			border-radius: 10px;
+		}
+
 	</style>
 </head>
 <body>
@@ -183,7 +196,7 @@ while($row = mysqli_fetch_assoc($result)){
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+						<h5 class="modal-title" id="exampleModalLabel">Confirmacão de Exclusão da conta</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -193,7 +206,7 @@ while($row = mysqli_fetch_assoc($result)){
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-						<a href="php/_exclui_usu.php"> <button type="button" class="btn btn-primary">Confirmar</button></a>
+						<a href="php/_exclui_usu.php"> <button type="button" class="btn btn-danger">Confirmar</button></a>
 					</div>
 				</div>
 			</div>
