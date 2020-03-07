@@ -3,6 +3,9 @@ session_start();
 
 include("conexao.php");
 
+if(isset($_GET['email'])){
+	$_SESSION['email'] = $_GET['email']; 
+}
 
 $email = $_SESSION['email'];
 
@@ -18,6 +21,9 @@ $result3 = mysqli_query($con,$sql3);
 
 $sql = "DELETE FROM usuarios WHERE email = '$email'"; 
 $result = mysqli_query($con,$sql);
+
+$sql4 = "DELETE FROM report WHERE email = '$email'"; 
+$result4 = mysqli_query($con,$sql4);
 
 if(mysqli_affected_rows($con)){
 	$_SESSION['nome'] = null;

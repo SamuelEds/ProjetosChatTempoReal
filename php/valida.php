@@ -34,9 +34,16 @@ if((isset($_POST['email'])) && (isset($_POST['senha']))){
 		header("Location: /ProjetosChatTempoReal/chat.php");
 
 	}else if($usuario == "mod@gmail.com" && $senha == "123"){
+
 		echo "<script>alert('Email ou Senha inválido!');</script>";
 		echo "<script>javascript:window.location='/ProjetosChatTempoReal/moderador.php';</script>";
-	}else{
+		
+	}else if($usuario == "adm@gmail.com" && $senha == "123"){
+
+		echo "<script>alert('Email ou Senha inválido!');</script>";
+		echo "<script>javascript:window.location='/ProjetosChatTempoReal/adm.php';</script>";
+
+	}else if(!isset($nomeu) && !isset($senha1)){
 
 		echo "<script>alert('Email ou Senha inválido!');</script>";
 		echo "<script>javascript:window.location='/ProjetosChatTempoReal/login.php';</script>";

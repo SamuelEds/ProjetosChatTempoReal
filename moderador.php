@@ -19,11 +19,11 @@ $result = mysqli_query($con,$sql);
 </head>
 <body>
 
-	<div class="card" style="width: 80rem; text-align: center;">
+	<div class="card" style="width: 100%; text-align: center;">
 		<div class="card-body">
-			<h5 class="card-title">Este Painel está permitido apenas aos moderadores do Sistema. Qualquer ato de desrespeito (Usuários - Staff ou Staff - Usuários) poderá ser reportado ao ADM do Sistema</h5>
+			<h5 class="card-title">Este Painel está permitido apenas aos <b>Moderadores</b> do Sistema. Qualquer ato de desrespeito (Usuários - Staff ou Staff - Usuários) poderá ser reportado ao ADM do Sistema</h5>
 			<p class="card-text">Abaixo estão listados todos os usuários do site, é permitido os moderadores apenas visualizarem todos os dados dos usuários e podem reportar ao ADM</p>
-			<a href="index.php" class="btn btn-primary">Voltar para a Tela de Inicío</a>
+			<a href="index.php" class="btn btn-primary">Voltar para a Tela de Início</a>
 		</div>
 	</div>
 
@@ -40,7 +40,6 @@ $result = mysqli_query($con,$sql);
 			</tr>
 		</thead>
 		<tbody>
-
 			<?php while($row = mysqli_fetch_assoc($result)){ ?>
 				
 				<tr>
@@ -50,7 +49,29 @@ $result = mysqli_query($con,$sql);
 					<td><?php echo $row['pais']; ?></td>
 					<td><?php echo $row['genero']; ?></td>
 					<td><?php echo $row['email']; ?></td>
-					<td><a href="php/reportUser.php" class="btn btn-danger">Reportar</a></td>
+					
+
+					<td>
+						<p>
+							<button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+								Reportar
+							</button>
+						</p>
+						
+						<form method="post" action="php/reportUser.php?id=<?php echo $row['id'] ?>&&nomec=<?php echo $row['nomecompleto'] ?>&&nomeu=<?php echo $row['nomeusuario'] ?>&&pais=<?php echo $row['pais'] ?>&&genero=<?php echo $row['genero'] ?>&&email=<?php echo $row['email'] ?>">
+
+							<div class="collapse" id="collapseExample">
+								<div class="card card-body">
+									<div class="form-group">
+										<input type="text" class="form-control" id="exampleFormControlInput1" name="motivo" required placeholder="Motivo aqui...">
+									</div>
+								</div>
+							</div>
+
+						</form>
+						
+
+					</td>
 				</tr>
 
 			<?php } ?>
