@@ -29,7 +29,7 @@ CREATE TABLE `mensagens` (
   `hora` varchar(50) DEFAULT NULL,
   `ip` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,38 @@ CREATE TABLE `mensagens` (
 
 LOCK TABLES `mensagens` WRITE;
 /*!40000 ALTER TABLE `mensagens` DISABLE KEYS */;
+INSERT INTO `mensagens` VALUES (2,'Denilson','Muito bem e vc?','20:03:48','::1'),(4,'Denilson','Programando site nÃ© safrado...','20:04:04','::1'),(6,'SASA','Como Ã© a histÃ³ria?','20:07:21','::1');
 /*!40000 ALTER TABLE `mensagens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `report`
+--
+
+DROP TABLE IF EXISTS `report`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `report` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nomecompleto` varchar(200) DEFAULT NULL,
+  `nomeusuario` varchar(200) NOT NULL,
+  `pais` varchar(250) NOT NULL,
+  `genero` varchar(100) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `motivo` text NOT NULL,
+  `foto` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `report`
+--
+
+LOCK TABLES `report` WRITE;
+/*!40000 ALTER TABLE `report` DISABLE KEYS */;
+INSERT INTO `report` VALUES (19,'Denis','Denilson','Chile','M','gamesfoda@gmail.com','Ele tem um irmÃ£o chamado Denis, parece o mesmo nome, que Ban nele','');
+/*!40000 ALTER TABLE `report` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -58,7 +89,7 @@ CREATE TABLE `usuarios` (
   `senha` varchar(9) NOT NULL,
   `foto` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +98,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (6,'Samuel Eds','Samu','Brasil','M','samuel@gmail.com','123',NULL),(7,'Samuel Edson Ribeiro Sampaio','Minino','Brasil','M','samueledshotmailgm@gmail.com','123','foto_perfil.jpg');
+INSERT INTO `usuarios` VALUES (19,'Denis','Denilson','Chile','M','gamesfoda@gmail.com','123',NULL),(20,'Sarah Cibelyh Ribeiro Sampaio','SASA','PaÃ­s da AmÃ©rica Central','F','s@gmail.com','123',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -80,4 +111,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-22 12:57:23
+-- Dump completed on 2020-03-07 20:18:15
