@@ -148,7 +148,9 @@ while($row = mysqli_fetch_assoc($result)){
 			<div class="card-body" style="background-color: black;">
 				<h5 class="card-title" style="color: white;"></h5>
 				<p class="card-text" style="color: white;">
+
 					<img class="minhafoto" src="<?php if($row['foto'] != null){echo('/ProjetosChatTempoReal/uploads/'.$row['foto']);}else{ echo('/ProjetosChatTempoReal/img/login.png');} ?>">
+					
 					<br>
 					<h2 style="color: white;"><?php if($row['nomecompleto'] != ""){ echo $row['nomecompleto'];} else{ echo "-";} ?></h2>
 					<form method="post" action="uploadFoto.php" enctype="multipart/form-data">
