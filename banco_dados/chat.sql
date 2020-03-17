@@ -1,13 +1,13 @@
--- MySQL dump 10.16  Distrib 10.1.38-MariaDB, for Win64 (AMD64)
+-- MariaDB dump 10.17  Distrib 10.4.11-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: chat
 -- ------------------------------------------------------
--- Server version	10.1.38-MariaDB
+-- Server version	10.4.11-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -25,11 +25,11 @@ DROP TABLE IF EXISTS `mensagens`;
 CREATE TABLE `mensagens` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) DEFAULT NULL,
-  `mensagem` varchar(300) DEFAULT NULL,
+  `mensagem` text NOT NULL,
   `hora` varchar(50) DEFAULT NULL,
   `ip` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,6 @@ CREATE TABLE `mensagens` (
 
 LOCK TABLES `mensagens` WRITE;
 /*!40000 ALTER TABLE `mensagens` DISABLE KEYS */;
-INSERT INTO `mensagens` VALUES (2,'Denilson','Muito bem e vc?','20:03:48','::1'),(4,'Denilson','Programando site nÃ© safrado...','20:04:04','::1'),(6,'SASA','Como Ã© a histÃ³ria?','20:07:21','::1');
 /*!40000 ALTER TABLE `mensagens` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +58,7 @@ CREATE TABLE `report` (
   `motivo` text NOT NULL,
   `foto` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +67,7 @@ CREATE TABLE `report` (
 
 LOCK TABLES `report` WRITE;
 /*!40000 ALTER TABLE `report` DISABLE KEYS */;
-INSERT INTO `report` VALUES (19,'Denis','Denilson','Chile','M','gamesfoda@gmail.com','Ele tem um irmÃ£o chamado Denis, parece o mesmo nome, que Ban nele','');
+INSERT INTO `report` VALUES (23,'','','','','','palavrão',''),(24,'','','','','','palavrão2','');
 /*!40000 ALTER TABLE `report` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +88,7 @@ CREATE TABLE `usuarios` (
   `senha` varchar(9) NOT NULL,
   `foto` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +97,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (19,'Denis','Denilson','Chile','M','gamesfoda@gmail.com','123',NULL),(20,'Sarah Cibelyh Ribeiro Sampaio','SASA','PaÃ­s da AmÃ©rica Central','F','s@gmail.com','123',NULL);
+INSERT INTO `usuarios` VALUES (32,'','Samuquisku','Brasil','M','s@gmail.com','8888',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -111,4 +110,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-03-07 20:18:15
+-- Dump completed on 2020-03-17 14:46:17

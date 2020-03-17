@@ -20,6 +20,15 @@ $result2 = mysqli_query($con,$sql2);
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 
+	<style type="text/css">
+		.minhafoto {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+
+		}
+	</style>
+
 </head>
 <body>
 
@@ -104,7 +113,7 @@ $result2 = mysqli_query($con,$sql2);
 					<td><?php echo $row['genero']; ?></td>
 					<td><?php echo $row['email']; ?></td>
 					<td><?php echo $row['motivo']; ?></td>
-					<td><?php echo $row['foto']; ?></td>
+					<td><img class="minhafoto" src="<?php if($row['foto'] != null){echo('/ProjetosChatTempoReal/uploads/'.$row['foto']);}else{ echo('/ProjetosChatTempoReal/img/login.png');} ?>"></td>
 					<td><div class="btn-group" role="group"><a href="php/_exclui_usu.php?email=<?php echo $row['email']; ?>" class="btn btn-danger">Excluir</a></div></td>
 				</tr>
 

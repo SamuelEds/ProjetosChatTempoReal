@@ -43,7 +43,9 @@
 
 			<br>
 			
-			<div  style=" width: 100%;">
+			<div  style=" width: 100%; -webkit-box-shadow: 10px 23px 24px -2px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 23px 24px -2px rgba(0,0,0,0.75);
+box-shadow: 10px 23px 24px -2px rgba(0,0,0,0.75);">
 
 				<form class="px-4 py-3" method="post" action="php/valida.php">
 

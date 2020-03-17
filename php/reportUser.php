@@ -10,7 +10,7 @@ $genero = $_GET['genero'];
 $email = $_GET['email'];
 $motivo = $_POST['motivo'];
 
-if(isset($motivo)){
+if(isset($motivo) && (isset($_GET['id']) && isset($_GET['nomec']) && isset($_GET['nomeu']) && isset($_GET['pais']) && isset($_GET['genero']) && isset($_GET['email']))){
 
 	$sql = "INSERT INTO report(id, nomecompleto, nomeusuario, pais, genero, email, motivo, foto) VALUES ('$id', '$nomec', '$nomeu', '$pais', '$genero', '$email', '$motivo', '$foto')";
 
@@ -24,12 +24,13 @@ if(isset($motivo)){
 		echo "<script>javascript:window.location='/ProjetosChatTempoReal/moderador.php';</script>";
 	}
 
-}else{
+}else if(!(isset($_GET['id']) && isset($_GET['nomec']) && isset($_GET['nomeu']) && isset($_GET['pais']) && isset($_GET['genero']) && isset($_GET['email']))){
+	echo "<script>alert('Erro ao reportar usuário!');</script>";
+	echo "<script>javascript:window.location='/ProjetosChatTempoReal/moderador.php';</script>";
+}else if(!isset($motivo)){
 	echo "<script>alert('É preciso de um motivo para o Report!');</script>";
 	echo "<script>javascript:window.location='/ProjetosChatTempoReal/moderador.php';</script>";
 }
-
-echo $motivo;
 
 
 ?>

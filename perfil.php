@@ -180,7 +180,7 @@ while($row = mysqli_fetch_assoc($result)){
 				<br>
 				Localização: <?php if($row['pais'] != ""){ echo $row['pais'];} else{ echo "-";} ?>
 				<br>
-				Email: <?php if($row['email'] != ""){ echo $row['email'];} else{ echo "-";} ?>
+				Email: <?php if($row['email'] != ""){ echo $row['email']; } else{ echo "-";} ?>
 				<br>
 				<br>
 				<a href="editar.php"><input type="button" name="editar" class="btn btn-dark" value="Editar sua Conta"></a>
@@ -208,7 +208,7 @@ while($row = mysqli_fetch_assoc($result)){
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-						<a href="php/_exclui_usu.php"> <button type="button" class="btn btn-danger">Confirmar</button></a>
+						 <button type="button" class="btn btn-danger"><a href="php/_exclui_usu.php">Confirmar</a></button>
 					</div>
 				</div>
 			</div>
