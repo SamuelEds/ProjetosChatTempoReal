@@ -12,211 +12,51 @@ setcookie('nome',$nome);
 	<link rel="shortcut icon" href="img/logoF.png" />
 	<meta charset="utf-8">
 
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-
 	<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
 	<script type="text/javascript" src="js/js.js"></script>
 	<script type="text/javascript" src="js/jquery-form.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 
-	<style type="text/css">
-		body{
+	<link rel="stylesheet" type="text/css" href="/ProjetosChatTempoReal/css/chat.css">
 
-		background:url("./img/back.jpg");
-		background-repeat:no-repeat;
-		background-attachment: fixed;
-
-	}
-
-	#mensagens{
-		width: 950px;
-		height: 400px;
-		max-height: 400px;
-		overflow: auto;
-		overflow-x: hidden;
-		border: 7px solid #aaa;
-		border-radius: 5px;
-		padding: 8px;
-		margin: 4px;
-		color: white;
-		background:url("./img/chatbg.jpg");
-		background-repeat: no-repeat;
-		background-size: 100%;
-		background-attachment: unset;
-
-	}
-
-	input[type='text']{
-		display: block;
-		width: 850px;
-		font-size: 14px;
-		padding: 6px;
-		border: 7px solid #aaa;
-		border-radius: 5px;
-		outline: 0;
-		color: white;
-	}
-
-	p{
-		color: white;
-		text-align: left;
-		word-wrap: break-all;
-		margin-top: 5px;
-		font-family: arial,sans-serif;
-	}
-
-	b{
-		cursor: pointer;
-	}
-
-	.enviar{
-
-		transform: translateX(385px) translateY(-62.5px);
-
-	}
-
-	html {
-		height: 100%;
-	}
-	body {
-		display: flex;
-		flex-direction: column;
-		height: 100vh;
-	}
-	.content {
-		flex: 1 0 auto; 
-
-		padding: 20px;
-	}
-	.footer {
-		height: 100px;
-		flex-shrink: 0;
-		padding: 100px;
-	}
-	* {
-		box-sizing: border-box;
-	}
-	body {
-		margin: 0;
-		font: 16px Sans-Serif;
-	}
-	h1 {
-		margin: 0 0 20px 0;
-	}
-	p {
-		margin: 0 0 20px 0;
-	}
-	footer {
-		background: #363636;
-		color: white;
-	}
-
-	.credits{
-
-		float: right;
-		border: 1px solid #fff;
-		width: 340px;
-		height: 150px;
-		margin-right: 0px;
-		margin-top: -80px;
-
-	}
-
-	.copyright{
-
-		float: left;
-		border: 1px solid #fff;
-		width: 340px;
-		height: 150px;
-		margin-left: 0px;
-		margin-top: -80px;
-	}
-
-	.logoF{
-
-		margin-top: -50px;
-		height: 90px;
-
-	}
-
-	.logoFooter{
-
-		margin-top: -20px;
-
-	}
-
-	.mail{
-		width: 20px;
-	}
-
-	.regras{
-		float: left;
-		margin-right: 0px;
-		border: 1px solid #fff;
-		border-radius: 10px;
-		width: 200px;
-		height: 400px;
-		position: absolute;
-		background-color: #90EE90;
-		background-size: 100%;
-	}
-
-	::-webkit-scrollbar{
-		width: 10px;
-	}
-
-	::-webkit-scrollbar-track{
-		background-color: rgba(255,255,255,0.1);
-	}
-
-	::-webkit-scrollbar-thumb{
-		background-color: #11171a;
-		border-radius: 10px;
-	}
-	</style>
-
-
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#mensagens').load('ver.php');
-		var RefreshId = setInterval(function(){
+	<script type="text/javascript">
+		$(document).ready(function(){
 			$('#mensagens').load('ver.php');
-		}, 500);
-		$.ajaxSetup({cache:false});
-	});
-
-	$(document).ready(function(){
-		$("#meufrm").ajaxForm({
-			target: '#mensagens',
-			success: function(retorno){
-				$("#mensagens").html(retorno);
-				$("#mensagens").show();
-			}
+			var RefreshId = setInterval(function(){
+				$('#mensagens').load('ver.php');
+			}, 500);
+			$.ajaxSetup({cache:false});
 		});
-	});
+
+		$(document).ready(function(){
+			$("#meufrm").ajaxForm({
+				target: '#mensagens',
+				success: function(retorno){
+					$("#mensagens").html(retorno);
+					$("#mensagens").show();
+				}
+			});
+		});
 
 
-</script>
+	</script>
 
-<script type="text/javascript">
-	<!--
-		var i = 9999;
-		var tempo = 10;
-      var tamanho = 826; // tamanho da barra de rolagem  >> Ver arquivo Leiame.txt
-      var t;
+	<script type="text/javascript">
+		<!--
+			var i = 9999;
+			var tempo = 10;
+	    var tamanho = 826; // tamanho da barra de rolagem  >> Ver arquivo Leiame.txt
+	    var t;
 
-      function Rolar() {
-      	document.getElementById('mensagens').scrollTop = i;
-      	t = setTimeout("Rolar()", tempo);
-      }
-      function Parar() {
-      	clearTimeout(t);
-      }
+	    function Rolar() {
+	    	document.getElementById('mensagens').scrollTop = i;
+	    	t = setTimeout("Rolar()", tempo);
+	    }
+	    function Parar() {
+	    	clearTimeout(t);
+	    }
       //-->
   </script>
-
-
 </head>
 <body onload="Rolar();">
 
@@ -225,36 +65,36 @@ setcookie('nome',$nome);
 	<br>
 	<br>
 	<center>
-		<img src="./img/logo.png" width="250px">
-		<br>
-		<div class="regras">
-			<center>
-				<h3>REGRAS</h3>
-				<i>
-					1- Respeitar os membros (penalidade = MUTE)
-					<br>
-					<br>
-					2- Sem flood no chat (penalidade = MUTE)
-					<br>
-					<br>
-					3- Nada de comercio (penalidade = PERMA BAN)
-					<br>
-					<br>
-					4- não passe informações pessoais a desconhecidos
-					<br>
-					<br>
-					5- sem conteudo +18 (penalidade = PERMA BAN)
-				</i>
-			</center>
-		</div>
 		<div id="mensagens" onmouseover="Parar()" onmouseout="Rolar()"></div>
 		<br>
 
 		<form method="POST" action="enviar.php" id="meufrm">
-			<input type="text" name="mensagem" id="mensagem" placeholder="Digite uma mensagem..." maxlength="103" autocomplete="off" style="background-color: black;" />
+
+			<div class="input-group" style="margin-left: 100px;">
+				<div class="input-group-prepend">
+					<a class="btn btn-outline-dark dropdown-toggle" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+						REGRAS DE USO
+					</a>
+				</div>
+				<textarea name="mensagem" placeholder="Digite uma mensagem..." autocomplete="off" required style="background-color: white;" cols="100" rows="2" maxlength="118"></textarea>
+				
+				<button class="btn btn-outline-light"><img src="img/iconeEnviar.png" style="width: 40px; height: 20px;"></button>
+				
+			</div>
+
+			<div class="collapse" id="collapseExample">
+				<div class="card card-body">
+					Aqui vai as regras de uso do chat...
+				</div>
+			</div>
+
+			
+			
 		</form>
 
-		<?php require_once("footer.php")?>
+
+
+		<?php require_once("footer.html")?>
 
 	</center>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

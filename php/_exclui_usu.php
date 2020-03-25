@@ -9,16 +9,16 @@ if(isset($_GET['email'])){
 
 $email = $_SESSION['email'];
 
-$sql2 = "SELECT * FROM usuarios WHERE email = '$email'";
+/*$sql2 = "SELECT * FROM usuarios WHERE email = '$email'";
 $result2 = mysqli_query($con,$sql2);
 
 while ($row = mysqli_fetch_assoc($result2)) {
 	$nome = $row['nomeusuario'];
-}
+}*/
 
 
 
-$sql3 = "DELETE FROM mensagens WHERE nome = '$nome'"; 
+$sql3 = "DELETE FROM mensagens WHERE email = '$email'"; 
 $result3 = mysqli_query($con,$sql3);
 
 $sql4 = "DELETE FROM report WHERE email = '$email'"; 

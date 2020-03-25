@@ -1,0 +1,19 @@
+.footer {
+	height: 100px;
+	flex-shrink: 0;
+	padding: 100px;
+	position: relative;
+}
+
+.logoF{
+
+	margin-top: -50px;
+	height: 90px;
+
+}
+
+.logoFooter{
+
+	margin-top: -20px;
+
+}

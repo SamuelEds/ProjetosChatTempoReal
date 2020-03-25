@@ -21,12 +21,14 @@ $result2 = mysqli_query($con,$sql2);
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 
 	<style type="text/css">
+
 		.minhafoto {
-			width: 200px;
-			height: 200px;
+			width: 50px;
+			height: 50px;
 			border-radius: 50%;
 
 		}
+
 	</style>
 
 </head>
@@ -71,7 +73,7 @@ $result2 = mysqli_query($con,$sql2);
 					<td><?php echo $row['pais']; ?></td>
 					<td><?php echo $row['genero']; ?></td>
 					<td><?php echo $row['email']; ?></td>
-					<td><div class="btn-group" role="group"><a href="#" class="btn btn-danger">Excluir</a> <a href="#" class="btn btn-success">Atualizar</a></div></td>
+					<td><div class="btn-group" role="group"><a href="php/_exclui_usu.php?email=<?php echo $row['email']; ?>" class="btn btn-danger">Excluir</a> <a href="editar.php?email=<?php echo $row['email']; ?>" class="btn btn-success">Atualizar</a></div></td>
 				</tr>
 
 			<?php } ?>

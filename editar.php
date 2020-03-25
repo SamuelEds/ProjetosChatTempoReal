@@ -3,6 +3,10 @@
 session_start();
 include("php/conexao.php");
 
+if(isset($_GET['email'])){
+  $_SESSION['email'] = $_GET['email'];
+}
+
 $email = $_SESSION['email'];
 
 $sql = "SELECT * FROM usuarios WHERE email = '$email'";
@@ -65,11 +69,11 @@ while($row = mysqli_fetch_assoc($result)){
           </div>
         </div>
 
-          <div class="form-row">
+        <div class="form-row">
 
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault03">País</label>
-              <select class="custom-select" id="validationDefault04" name="pais" >
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault03">País</label>
+            <select class="custom-select" id="validationDefault04" name="pais" >
 
               <option selected disabled ></option>
               <option>Brasil</option>
@@ -85,78 +89,78 @@ while($row = mysqli_fetch_assoc($result)){
               <option>País da América do Norte</option>
             </select>
 
-            </div>
-
-            <div class="col-md-3 mb-3">
-              <label for="validationDefault04">Gênero *</label>
-              <select class="custom-select" id="validationDefault04" name="genero" required>
-                <option selected disabled ></option>
-                <option>M</option>
-                <option>F</option>
-                <option>Outro</option>
-              </select>
-            </div>
-
-
-          </div>
-          <div class="form-group">
-            <label class="form">E-mail *</label>
-            <input type="email" class="form-control" name="email" placeholder="Insira seu melhor E-mail: * " value="<?php echo($row['email']);?>" required  readonly=“true”>
           </div>
 
-          <div class="form-group">
-            <label class="form">Senha *</label>
-            <input type="password" class="form-control" name="senha" placeholder="Insira sua Senha *" value="<?php echo($row['senha']);?>" required autocomplete="off">
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault04">Gênero *</label>
+            <select class="custom-select" id="validationDefault04" name="genero" required>
+              <option selected disabled ></option>
+              <option>M</option>
+              <option>F</option>
+              <option>Outro</option>
+            </select>
           </div>
 
-          <div class="form-group">
-            <label class="form">Repita sua Senha *</label>
-            <input type="password" class="form-control" name="repitasenha" placeholder="Repita sua Senha:*" required autocomplete="off">
-          </div>
-          
-          
-          <div>
-            <div style="text-align: right;">
-              
-              
-              <a href="perfil.php" role="button" class="btn btn-lg btn-outline-dark">Voltar</a>
-              <!---<button type="submit" id="botao" class="btn btn-lg btn-outline-success">Atualizar</button>-->
 
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#exampleModal">
-                Atualizar
-              </button>
+        </div>
+        <div class="form-group">
+          <label class="form">E-mail *</label>
+          <input type="email" class="form-control" name="email" placeholder="Insira seu melhor E-mail: * " value="<?php echo($row['email']);?>" required  readonly=“true”>
+        </div>
 
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Confirmar Edição</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body" style="text-align: center; font-size: 20px;">
-                      Deseja salvar as alterações ?
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                      <button type="submit" class="btn btn-primary">Confirmar</button>
-                    </div>
+        <div class="form-group">
+          <label class="form">Senha *</label>
+          <input type="password" class="form-control" name="senha" placeholder="Insira sua Senha *" value="<?php echo($row['senha']);?>" required autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label class="form">Repita sua Senha *</label>
+          <input type="password" class="form-control" name="repitasenha" placeholder="Repita sua Senha:*" required autocomplete="off">
+        </div>
+
+
+        <div>
+          <div style="text-align: right;">
+
+
+            <a href="perfil.php" role="button" class="btn btn-lg btn-outline-dark">Voltar</a>
+            <!---<button type="submit" id="botao" class="btn btn-lg btn-outline-success">Atualizar</button>-->
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#exampleModal">
+              Atualizar
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmar Edição</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" style="text-align: center; font-size: 20px;">
+                    Deseja salvar as alterações ?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Confirmar</button>
                   </div>
                 </div>
               </div>
-              
-            </form>
+            </div>
 
-          </div>
+          </form>
+
         </div>
-      </form>
+      </div>
+    </form>
 
-    <?php } ?>
+  <?php } ?>
 
-  </div>
+</div>
 </form>
 </div>
 
