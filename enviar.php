@@ -17,11 +17,13 @@ if(isset($_COOKIE['nome'])){
 		$hora=date('H:i:s');
 		$ip=$_SERVER['REMOTE_ADDR'];
 		$email = $_SESSION['email'];
+		$foto = $_SESSION['nome-foto'];
 
-		$sql=$con->prepare('INSERT INTO mensagens(nome,mensagem,email,hora,ip) VALUES(:n, :m,:e, :h, :i)');
+		$sql=$con->prepare('INSERT INTO mensagens(nome,mensagem,email, foto,hora,ip) VALUES(:n, :m,:e, :f, :h, :i)');
 		$sql->bindValue(':n', $nome);
 		$sql->bindValue(':m', $mensagem);
 		$sql->bindValue(':e', $email);
+		$sql->bindValue(':f', $foto);
 		$sql->bindValue(':h', $hora);
 		$sql->bindValue(':i', $ip);
 		$sql->execute();

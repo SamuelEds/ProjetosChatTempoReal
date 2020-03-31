@@ -19,11 +19,8 @@ $result = mysqli_query($con,$sql);
 
 	<head>
 		<style type="text/css">
-		a:hover{
-			background-color: lightgreen;
-		}
 
-		.foto{
+		#foto1{
 
 			position: relative;
 			width: 50px;
@@ -51,6 +48,6 @@ $result = mysqli_query($con,$sql);
 			</div>
 			<a href="/ProjetosChatTempoReal/formulario.php" role="button" class="btn">Inscreva-se</a>
 
-			<a href="perfil.php" class="btn " role="button" ><?php while($rows_usu = mysqli_fetch_assoc($result)){ $foto = $rows_usu['foto']; $nome_usu = $rows_usu['nomeusuario']; }  ?> <?php if(isset($foto)){ ?> <img class="foto" src="uploads/<?php echo($foto);?>"> <?php }else if(isset($nome_usu)){ echo $nome_usu; }else{ echo ""; } ?> </a>
+			<a href="perfil.php" class="btn " role="button" ><?php while($rows_usu = mysqli_fetch_assoc($result)){ $foto = $rows_usu['foto']; $nome_usu = $rows_usu['nomeusuario']; }  ?> <?php if(isset($foto)){ ?> <img id="foto1" src="uploads/<?php echo($foto);?>"> <?php }else if(isset($nome_usu)){ echo $nome_usu; }else{ echo ""; } ?> </a>
 		</nav>
 	</header>
