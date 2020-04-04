@@ -100,14 +100,16 @@ $email = $_SESSION['email'];
 		$size=$buscar->rowCount();
 
 		?>
-
-		<div class='alert alert-success' role='alert'>
-			Seja bem vindo(a) <b><?php echo $nomec; ?></b>.
-		</div>
-		<div class="alert alert-warning" role='alert'><p style='color: black; font-size: 15px;'>Use o chat com moderação!!</p></div>
+		<div class="container">
+			<div class='alert alert-success' role='alert'>
+				<center> Seja bem vindo(a) <strong><?php echo $nomec; ?></strong>.</center>
+			</div>
+			<div class="alert alert-warning" role='alert'><p style='color: black; font-size: 15px;'>Use o chat com moderação!!</p></div>
+		
 
 		<?php
 
+		
 		if($size > 0){
 			while ($linha=$buscar->fetch(PDO::FETCH_ASSOC)) {
 				$nome=$linha['nome'];
@@ -122,8 +124,8 @@ $email = $_SESSION['email'];
 
 				<hr class="linha">
 
-				<div class="chat">
-					<div class="user-photo"><img src="uploads/<?php echo $linha['foto'] ?>" class="perfil"></div><div class="nome-usu"><h2><?php echo $nome; ?></h2></div>
+				<div class="chat container">
+					<div class="user-photo"><img src="uploads/<?php if(!isset($foto)){ echo('login.png');}else{ echo($foto);} ?>" class="perfil"></div><div class="nome-usu"><h2><?php echo $nome; ?></h2></div>
 					<p class="mensagens chat-message"><?php echo $mensagem; ?></p>
 				</div>
 
@@ -137,11 +139,12 @@ $email = $_SESSION['email'];
 		}else{
 			echo "<p style='color: black;'>Sem mensagens até o momento...</p>";
 		}
-		
 
 	}
 
 	?>
+
+</div>
 	
 </body>
 </html>

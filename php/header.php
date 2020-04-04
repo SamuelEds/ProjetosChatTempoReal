@@ -4,11 +4,13 @@
 if(!isset($_SESSION)) 
 { 
 	session_start(); 
+
 }
 
-include("conexao.php");
 
-$email = $_SESSION['email'];
+	$email = $_SESSION['email'];
+
+include("conexao.php");
 
 $sql = "SELECT * FROM usuarios WHERE email = '$email'";
 $result = mysqli_query($con,$sql);

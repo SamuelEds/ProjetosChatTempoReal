@@ -5,8 +5,7 @@ $email = $_SESSION['email'];
 $nome = $_FILES['img']['name'];
 $temp = $_FILES['img']['tmp_name'];
 
-$_SESSION['nome-foto'] = $nome;
-$_SESSION['caminho'] = $temp;
+$_SESSION['nomeFoto'] = $_FILES['img']['name'];
 
 
 $banco = new mysqli("localhost","root","","chat");
