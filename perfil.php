@@ -130,6 +130,16 @@ while($row = mysqli_fetch_assoc($result)){
 			border-radius: 10px;
 		}
 
+		.confirm{
+			color: white;
+		}
+		.confirm:hover{
+			text-decoration: none;
+			color: white;
+
+		}
+
+
 	</style>
 </head>
 <body>
@@ -185,8 +195,12 @@ while($row = mysqli_fetch_assoc($result)){
 				<br>
 				<a href="editar.php"><input type="button" name="editar" class="btn btn-dark" value="Editar sua Conta"></a>
 				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalExemplo">
-					Exluir dados da Conta
+					Excluir dados
 				</button>
+				
+				<a href="php/logout.php"><button type="button" class="btn btn-danger">
+					Sair da conta
+				</button></a>
 
 			</h3>
 		</div>
@@ -208,7 +222,7 @@ while($row = mysqli_fetch_assoc($result)){
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-						 <button type="button" class="btn btn-danger"><a href="php/_exclui_usu.php">Confirmar</a></button>
+						 <button type="button" class="btn btn-danger"><a href="php/_exclui_usu.php" class="confirm">Confirmar</a></button>
 					</div>
 				</div>
 			</div>

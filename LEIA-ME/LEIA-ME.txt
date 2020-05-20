@@ -1,0 +1,16 @@
+Atualização 04/04/2020
+
+Samuel mudou a aparência da tela chat.php
+e programou uma nav que aparecesse o perfil
+do usuário.
+
+-----------------------------------------------------------------------------------------------
+
+Atualização 19/05/2020
+
+Samuel programou um sistema de solicitação de amizade.
+Pegou de base uma série de vídeos do canal: Thiago Sales
+
+Na PlayList: 
+https://www.youtube.com/watch?v=WZq1Ox1SH8E&list=PLXaOKta10T3-XYmZ5gKM2-hiH01DLBffq
+-----------------------------------------------------------------------------------------------

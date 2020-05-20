@@ -18,25 +18,6 @@ $email = $_SESSION['email'];
 
 	<style>
 
-	.balao{
-		background-color: #fff;
-		padding: 10px;
-		position: relative;
-		margin-right: 2000px;
-		border-radius: 20px;
-	}
-
-	.balao:before{
-		content: '';
-		position: absolute;
-		width: 15px;
-		height: 15px;
-		left: -4px;
-		bottom: 10px;
-		background: #fff;
-		-webkit-transform: rotate(40deg);
-	}
-
 	.perfil{
 		position: relative;
 		width: 100%;
@@ -45,13 +26,17 @@ $email = $_SESSION['email'];
 		padding: 1px;
 	}
 
+	#perfil_user:hover{
+		text-decoration: none;
+	}
+
 	.chat{
 		display: flex;
 		flex-flow: row wrap;
 		align-items: flex-start;
 	}
 
-	.chat .chat-message{
+	.chat-message{
 		width: 80%;
 		padding: 15px;
 		margin: 5px 10px;
@@ -85,6 +70,10 @@ $email = $_SESSION['email'];
 
 	}
 
+	.chat .alinhar{
+		margin-left: 20px;
+	}
+
 </style>
 </head>
 <body>
@@ -100,7 +89,6 @@ $email = $_SESSION['email'];
 		$size=$buscar->rowCount();
 
 		?>
-		<div class="container">
 			<div class='alert alert-success' role='alert'>
 				<center> Seja bem vindo(a) <strong><?php echo $nomec; ?></strong>.</center>
 			</div>
@@ -124,10 +112,14 @@ $email = $_SESSION['email'];
 
 				<hr class="linha">
 
-				<div class="chat container">
-					<div class="user-photo"><img src="uploads/<?php if(!isset($foto)){ echo('login.png');}else{ echo($foto);} ?>" class="perfil"></div><div class="nome-usu"><h2><?php echo $nome; ?></h2></div>
-					<p class="mensagens chat-message"><?php echo $mensagem; ?></p>
+				<div class="chat row">
+
+					<div class="alinhar"><div class="user-photo "><img src="uploads/<?php if(!isset($foto)){ echo('login.png');}else{ echo($foto);} ?>" class="perfil"></div><a href="paginas/solicitacao.php?email=<?php echo($email); ?>" id="perfil_user"><div class="nome-usu"><h2><?php echo $nome; ?></h2></div></a></div>
+					
+					
 				</div>
+
+				<p class="mensagens chat-message"><?php echo $mensagem; ?></p>
 
 				<br>
 				<?php
@@ -143,8 +135,6 @@ $email = $_SESSION['email'];
 	}
 
 	?>
-
-</div>
 	
 </body>
 </html>

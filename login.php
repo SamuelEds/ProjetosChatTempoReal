@@ -33,7 +33,7 @@
 <body background="img/back.jpg">
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 
-	<?php require_once("php/header.php") ?>
+	<?php include("php/header.php") ?>
 	<center>
 
 		<img src="img/logo.png" style="width: 20%; margin-top: 5%; ">

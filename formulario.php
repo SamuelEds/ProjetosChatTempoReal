@@ -118,7 +118,7 @@
           <div style="text-align: right;">
             <a href="index.php" role="button" class="btn btn-outline-dark btn-lg">Voltar</a>
             <button type="reset" id="botao" class="btn btn-outline-danger btn-lg">Resetar</button>
-            <button id="botao" class="btn btn-outline-success btn-lg" data-toggle="modal" data-target="#exampleModal">Cadastrar</button>
+            <button type="button" id="botao" class="btn btn-outline-success btn-lg" data-toggle="modal" data-target="#exampleModal">Cadastrar</button>
           </div>
         </div>
 

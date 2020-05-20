@@ -131,7 +131,7 @@
 
 <center>
 
-    <?php require_once("footer.html")?>
+    <?php //require_once("footer.html")?>
 
   </center>
 
