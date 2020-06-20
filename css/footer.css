@@ -1,112 +1,119 @@
-p{
-	color: #999;
-	line-height: 25px;
-}
 
-h2,h3{
-	color: #fff;
-}
-
-.footer-top{
-	background: #111; 
-	padding: 80px;
+/*TOPO DO FOOTER*/
+.topo{
+	background-color: black;
 	text-align: center;
-	width: 100%;
+	margin-top: 20px;
 }
 
-.segment-one h3{
+/*COLUNA 1 DO FOOTER*/
+
+.topo .coluna-1 {
+	margin-top: 20px;
+}
+
+.topo .coluna-1 h3{
+	color: white; 
 	font-family: Verdana;
-	color: #fff;
-	letter-spacing: 5px;
-	margin: 10px 0;
 }
 
-.segment-two h2{
-	color: #fff;
+.topo .coluna-1 p{
+	color: rgb(169,169,169); 
+}
+
+/*COLUNA 2 DO FOOTER*/
+
+.topo .coluna-2 {
+	margin-top: 20px;
+}
+
+.topo .coluna-2 h2{
+	color: white;
 	font-family: Arial Black;
-	text-transform: uppercase;
 }
 
-.segment-two h2:before{
+.topo .coluna-2 h2:before{
 	content: '|';
-	color: #c65039;
+	color: orange;
 	padding-right: 10px;
 }
 
-.segment-two ul{
-	margin: 0;
-	padding: 0;
+.topo .coluna-2 ul{
 	list-style: none;
 }
 
-.segment-two ul li{
+.topo .coluna-2 ul li{
 	border-bottom: 1px solid rgba(255,255,255,0.3);
 	line-height: 40px;
 	text-align: left;
 }
 
-.segment-two ul li a{
-	color: #999;
+.topo .coluna-2 ul li a{
 	text-decoration: none;
+	color: rgb(169,169,169);
 }
 
-.segment-three h2{
-	color: #fff;
-	font-family: Poppins;
+/*COLUNA 3 DO FOOTER*/
+
+.topo .coluna-3{
+	margin-top: 20px;
+}
+
+.topo .coluna-3 h2{
+	color: white;
+	font-family: Verdana;
 	text-transform: uppercase;
 }
 
-.segment-three h2:before{
+.topo .coluna-3 h2:before{
 	content: '|';
-	color: #c65039;
+	color: orange;
 	padding-right: 10px;
 }
 
-.segment-three a{
-	background: #494848;
-	width: 40px;
-	height: 40px;
-	display: inline-block;
-	border-radius:  50%;
-
+.topo .coluna-3 p{
+	color: rgb(169,169,169);
 }
 
-.segment-three a i{
+.topo .coluna-3 a{
+	background-color: #494848;
+	display: inline-block;
+	border-radius: 50%;
+}
+
+.topo .coluna-3 a i{
 	font-size: 20px;
-	color: #fff;
+	color: white;
 	padding: 10px 12px;
 }
 
-.segment-four h2{
-	color: #fff;
+/*COLUNA 4 DO FOOTER*/
+
+.topo .coluna-4{
+	margin-top: 20px;
 }
 
-.segment-four h2:before{
+.topo .coluna-4 h2{
+	color: white;
+	font-size: 40px;
+}
+
+.topo .coluna-4 p{
+	color: rgb(169,169,169);
+}
+
+.topo .coluna-4 h2:before{
 	content: '|';
-	color: #c65039;
+	color: orange;
 	padding-right: 10px;
 }
 
-.footer-bottom-text{
+/*BOTTOM DO FOOTER*/
+
+.baixo{
 	text-align: center;
-	background-color: #000;
+	background-color: rgb(28,28,28);
 	line-height: 75px;
 	width: 100%;
 	color: white;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px){
-	.md-mb-30{
-		margin-bottom: 30px;
-	}
-}
-
-@media only screen and (max-width: 767px){
-	.sm-mb-30{
-		margin-bottom: 30px;
-	}
-
-	.footer-top{
-		padding: 50px 0;
-	}
 }

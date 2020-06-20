@@ -1,0 +1,90 @@
+body{
+	overflow-x: hidden;
+}
+
+.destinatario{
+	text-align: center;
+}
+
+.corpo{
+	background-color: black;
+	margin-top: 5%;
+	display: flex;
+	align-items: stretch;
+
+}
+
+.conteudo{
+	background-color: black;
+	padding: 20px;
+	min-height: 100vh;
+}
+
+.chatbox{
+	min-width: 390px;
+	height: 800px;
+	background: white;
+	padding: 20px;
+	box-shadow: 0px 5px #ccc;
+	background-color: rgb(79,79,79);
+}
+
+.chat-logs{
+	background: rgb(220,220,220);
+	padding: 10px;
+	height: 650px;
+	border-radius: 5%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.form-chat{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.form-chat .texto{
+	resize: none;
+}
+
+.form-chat .texto:focus{
+	background: #fff;
+}
+
+.form-chat textarea{
+	border-radius: 10px;
+	position: relative;
+	width: 90%;
+}
+
+.form-chat textarea:focus{
+	border: 0 none;
+	outline: 0;
+}
+
+.form-chat button{
+	margin-top: -50px;
+	padding: 20px;
+	background: white;
+	border-radius: 10px;
+}
+
+.chat-form{
+	margin-top: 0px;
+	display: flex;
+	align-items: flex-start;
+}
+
+
+::-webkit-scrollbar{
+	width: 10px;
+}
+
+::-webkit-scrollbar-track{
+	background-color: rgba(255,255,255,0.1);
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #11171a;
+	border-radius: 10px;
+}

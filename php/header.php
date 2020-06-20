@@ -1,18 +1,12 @@
 
 <?php 
-
-if(!isset($_SESSION)) 
-{ 
-	session_start(); 
-
-}
-
-
-$email = $_SESSION['email'];
-
 include("conexao.php");
 
 include("includes.php");
+
+$email = $_SESSION['email'];
+
+
 
 $sql = "SELECT * FROM usuarios WHERE email = '$email'";
 $result = mysqli_query($con,$sql);
@@ -33,13 +27,15 @@ $result = mysqli_query($con,$sql);
 
 		}
 	</style>
+
+	<link rel="stylesheet" href="/ProjetosChatTempoReal/css/bootstrap.css">
 </head>
-<link rel="stylesheet" href="css/bootstrap.css">
+
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;">
 	<img src="/ProjetosChatTempoReal/img/logo.png" style="width: 5%;">
 	<a class="btn " href="/ProjetosChatTempoReal/index.php">Home</a>
-	<?php if(isset($_SESSION['nome'])){ ?><a class="btn " href="/ProjetosChatTempoReal/chat.php">Chat</a><?php } ?>
+	<?php if(isset($_SESSION['nome'])){ ?><a class="btn " href="/ProjetosChatTempoReal/chat.php">Chat</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -51,7 +47,7 @@ $result = mysqli_query($con,$sql);
 					echo("(".total_amizade($con).")");
 				}else{
 					echo("(0)");
-				} ?> </a>
+				} ?> </a></li><?php } ?>
 
 			</div>
 			<a href="/ProjetosChatTempoReal/formulario.php" role="button" class="btn">Inscreva-se</a>

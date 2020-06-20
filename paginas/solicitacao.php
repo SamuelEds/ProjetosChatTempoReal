@@ -5,10 +5,10 @@
 	<title>PÁGINA DE SOLICITAÇÕES DE AMIZADE</title>
 	<meta charset="utf-8">
 
-	<link rel="shortcut icon" href="/ProjetosChatTempoReal/img/logoF.png" />
+	<link rel="shortcut icon" href="../img/logoF.png" />
 
-	<link rel="stylesheet" type="text/css" href="/ProjetosChatTempoReal/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="/ProjetosChatTempoReal/js/bootstrap.js">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../js/bootstrap.js">
 
 	<style type="text/css">
 		

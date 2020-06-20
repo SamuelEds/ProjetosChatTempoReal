@@ -35,12 +35,12 @@ if((isset($_POST['email'])) && (isset($_POST['senha']))){
 
 	}else if($usuario == "mod@gmail.com" && $senha == "123"){
 
-		echo "<script>alert('Email ou Senha inválido!');</script>";
+		echo "<script>alert('SEJA BEM VINDO MODERADOR(A)');</script>";
 		echo "<script>javascript:window.location='/ProjetosChatTempoReal/moderador.php';</script>";
 		
 	}else if($usuario == "adm@gmail.com" && $senha == "123"){
 
-		echo "<script>alert('Email ou Senha inválido!');</script>";
+		echo "<script>alert('SEJA BEM VINDO ADMINISTRADOR(A)!');</script>";
 		echo "<script>javascript:window.location='/ProjetosChatTempoReal/adm.php';</script>";
 
 	}else if(!isset($nomeu) && !isset($senha1)){

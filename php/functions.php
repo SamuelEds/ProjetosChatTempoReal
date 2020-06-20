@@ -118,8 +118,6 @@ function enviar_solicitacao($con,$email_para){
 
 	if($sql->affected_rows > 0){
         	//echo "SOLICITAÇÃO ENVIADA";
-
-
 		redireciona("?pagina=perfil&email={$email_para}");
 	}else{
 		echo "SOLICITAÇÃO NÃO FOI ENVIADA";
@@ -369,6 +367,14 @@ function total_amizade($con){
 
 function listar_amigos($con){
 
+	//PEGAR O USUÁRIO
+	$sql2 = $con->prepare("SELECT * FROM usuarios WHERE email = ?");
+	$sql2->bind_param("s", $_SESSION['email']);
+	$sql2->execute();
+	$get2 = $sql2->get_result();
+	$r = $get2->fetch_assoc();
+
+	//PEGAR O USUÁRIO
 	$sql = $con->prepare("SELECT * FROM solicitacao WHERE (email_de = ? AND amigo = 1) OR (email_para = ? AND amigo = 1)");
 	$sql->bind_param("ss", $_SESSION['email'],$_SESSION['email'] );
 
@@ -417,6 +423,10 @@ function listar_amigos($con){
 						<h3>NOME COMPLETO: <b><?php echo $dados1['nomecompleto'];?></b> </h3>
 						
 						<a href="?pagina=deletar_solicitacao&id=<?php echo($dados['id']); ?>" class='btn btn-danger btn-lg'>Desfazer Amizade</a>
+						<br>
+						<br>
+
+						<a href="../paginas/chat-amigos.php?email=<?php echo($dados1['email']); ?>&&foto=<?php echo($r['foto']); ?>" class="btn btn-light btn-lg">Ir para Bate-Papo</a>
 						
 						<hr color="black" width="300px" style="border: 4px solid black;">
 						
@@ -446,8 +456,8 @@ function listar_amigos($con){
 
 		<div class="alert alert-danger">NENHUM AMIGO ENCONTRADO :(</div>
 
-		<?php
+			<?php
+		}
 	}
-}
 
-?>
+	?>

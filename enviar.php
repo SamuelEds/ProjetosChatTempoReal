@@ -7,13 +7,17 @@ $emailF = $_SESSION['email'];
 $sql = "SELECT * FROM usuarios WHERE email = '$emailF'";
 $result = mysqli_query($con,$sql);
 
+
 include 'config.php';
+
 date_default_timezone_set('America/Sao_Paulo');
 
 if(isset($_COOKIE['nome'])){
-	$mensagem=htmlspecialchars($_POST['mensagem']);
 
-	if(isset($mensagem) && !($mensagem == "")){
+	$mensagem=htmlspecialchars($_POST['mensagem']);
+	$msg = trim($_POST['mensagem']);
+
+	if(isset($mensagem) && !($mensagem == "") && !empty($msg)){
 
 		$nome=strip_tags($_COOKIE['nome']);
 

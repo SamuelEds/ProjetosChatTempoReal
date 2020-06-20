@@ -1,16 +1,4 @@
 
-*{
-	padding: 0px;
-	margin: 0px;
-}
-
-body{
-
-	background:url("/ProjetosChatTempoReal/img/back.jpg");
-	background-repeat:no-repeat;
-	background-attachment: fixed;
-
-}
 
 input[type='text']{
 	display: block;
@@ -43,50 +31,10 @@ b{
 
 }
 
-html {
-	height: 100%;
-}
-body {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-}
 .content {
 	flex: 1 0 auto; 
 
 	padding: 20px;
-}
-
-* {
-	box-sizing: border-box;
-}
-body {
-	margin: 0;
-	font: 16px Sans-Serif;
-}
-h1 {
-	margin: 0 0 20px 0;
-}
-p {
-	margin: 0 0 20px 0;
-}
-
-
-
-.mail{
-	width: 20px;
-}
-
-.regras{
-	float: left;
-	margin-right: 0px;
-	border: 1px solid #fff;
-	border-radius: 10px;
-	width: 200px;
-	height: 400px;
-	position: absolute;
-	background-color: #90EE90;
-	background-size: 100%;
 }
 
 ::-webkit-scrollbar{
@@ -102,41 +50,11 @@ p {
 	border-radius: 10px;
 }
 
-.form-group textarea{
-	border-radius: 10px;
-	position: relative;
-	width: 91%;
-}
-
-.form-group textarea:focus{
-	border: 0 none;
-	outline: 0;
-}
-
-.form-group{
-	width: 100%;
-	background: rgb(79,79,79);
-	padding: 10px;
-	border-radius: 10px;
-
-	transform: translateY(140%);
-}
-
-.form-group button{
-	padding: 5px;
-	background: white;
-	border-radius: 10px;
-}
-
-
-.logo-sidebar{
-	width: 70%;
-}
 
 .chatbox{
 	min-width: 390px;
 	height: 800px;
-	background: white;
+	background: rgb(79,79,79);
 	padding: 20px;
 	box-shadow: 0 3px #ccc;
 	transform: translateY(-5%);
@@ -170,15 +88,26 @@ p {
 }
 
 .chat-form{
+	text-align: center;
 	margin-top: 0px;
 	display: flex;
 	align-items: flex-start;
 }
 
-#sidebar ul p img{
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
+.form-group textarea{
+	border-radius: 10px;
+	position: relative;
+}
+
+.form-group textarea:focus{
+	border: 0 none;
+	outline: 0;
+}
+
+.form-group button{
+	padding: 5px;
+	background: white;
+	border-radius: 10px;
 }
 
 

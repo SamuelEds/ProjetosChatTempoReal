@@ -39,7 +39,6 @@ $email = $_SESSION['email'];
 	.chat-message{
 		width: 80%;
 		padding: 15px;
-		margin: 5px 10px;
 		color: black;
 		font-size: 15px;
 		font-family: Arial;
@@ -112,7 +111,7 @@ $email = $_SESSION['email'];
 
 				<hr class="linha">
 
-				<div class="chat row">
+				<div class="chat col-md-11">
 
 					<div class="alinhar"><div class="user-photo "><img src="uploads/<?php if(!isset($foto)){ echo('login.png');}else{ echo($foto);} ?>" class="perfil"></div><a href="paginas/solicitacao.php?email=<?php echo($email); ?>" id="perfil_user"><div class="nome-usu"><h2><?php echo $nome; ?></h2></div></a></div>
 					

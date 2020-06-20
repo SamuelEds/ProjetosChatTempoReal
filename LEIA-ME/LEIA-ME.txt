@@ -14,3 +14,30 @@ Pegou de base uma série de vídeos do canal: Thiago Sales
 Na PlayList: 
 https://www.youtube.com/watch?v=WZq1Ox1SH8E&list=PLXaOKta10T3-XYmZ5gKM2-hiH01DLBffq
 -----------------------------------------------------------------------------------------------
+
+Atualização 12/06/2020
+
+- Samuel Edson modificou a página chat.php consertando alguns erros que estavam presente.
+Mais detalhes -> relatório 12/06/2020.
+
+-----------------------------------------------------------------------------------------------
+
+Atualização 17/06/2020
+
+Reformulação do index
+
+-----------------------------------------------------------------------------------------------
+
+Atualização 19/06/2020
+
+Link do ajax: https://www.youtube.com/watch?v=_4ffxkvdbdk
+
+-----------------------------------------------------------------------------------------------
+
+Atualização 20/06/2020
+
+link de vídeos para geração de relatórios com mPDF (biblioteca PHP para geração de relatórios):
+
+- Tutorial 01: https://www.youtube.com/watch?v=aiydKZHlBtw 
+- Tutorial 02: https://www.youtube.com/watch?v=z0qDMVF43yM
+- Tutorial 03: https://www.youtube.com/watch?v=WTqu8ufEcA8
