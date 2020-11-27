@@ -2,6 +2,12 @@
 session_start();
 include("conexao.php");
 
+//SELECIONAR MODERADOR
+$sql = $con->prepare("SELECT * FROM moderador WHERE email = ?");
+$sql->bind_param("s", $_POST['email']);
+$sql->execute();
+$get = $sql->get_result();
+
 $email = $_POST['email'];
 
 //$nome_usu = $_SESSION['nome'];
@@ -13,11 +19,10 @@ if((isset($_POST['email'])) && (isset($_POST['senha']))){
 
 	//$senha = md5($senha);
 
-
-
-	$sql = "SELECT * FROM usuarios WHERE email = '$usuario' and senha = '$senha' ";
+	$sql = "SELECT * FROM usuarios WHERE email = '$usuario'";
 	$result_usuario = mysqli_query($con,$sql);
 
+	//VERIFICAR USUÁRIOS
 	while ($rows = mysqli_fetch_assoc($result_usuario)) {
 
 		$nomeu = $rows['nomeusuario'];
@@ -26,14 +31,20 @@ if((isset($_POST['email'])) && (isset($_POST['senha']))){
 
 	}
 
-	if(isset($nomeu) && isset($senha1)){
+	//VERIFICAR MODERADORES
+	while($dados = $get->fetch_assoc()){
+		$nomeM = $dados['email'];
+		$senhaM = $dados['senha'];
+	}
+
+	if(isset($nomeu) && password_verify($senha, $senha1)){
 
 		$_SESSION['email'] = $email;
 		$_SESSION['nome']  = $nomeu;
 
 		header("Location: /ProjetosChatTempoReal/chat.php");
 
-	}else if($usuario == "mod@gmail.com" && $senha == "123"){
+	}else if(isset($nomeM) && isset($senhaM)){
 
 		echo "<script>alert('SEJA BEM VINDO MODERADOR(A)');</script>";
 		echo "<script>javascript:window.location='/ProjetosChatTempoReal/moderador.php';</script>";
@@ -43,7 +54,7 @@ if((isset($_POST['email'])) && (isset($_POST['senha']))){
 		echo "<script>alert('SEJA BEM VINDO ADMINISTRADOR(A)!');</script>";
 		echo "<script>javascript:window.location='/ProjetosChatTempoReal/adm.php';</script>";
 
-	}else if(!isset($nomeu) && !isset($senha1)){
+	}else if(!(isset($nomeu) && isset($senha1)) || !(isset($nomeM) && isset($senhaM))){
 
 		echo "<script>alert('Email ou Senha inválido!');</script>";
 		echo "<script>javascript:window.location='/ProjetosChatTempoReal/login.php';</script>";

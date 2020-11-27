@@ -14,25 +14,27 @@ $result = mysqli_query($con,$sql);
 
 while($row = mysqli_fetch_assoc($result)){
 
+  $senha = mysqli_real_escape_string($con, $row['senha']); //Escapar Caracteres especiais da senha
+
  ?>
  <!DOCTYPE html>
  <html>
  <head>
   <title>Formulário de Cadastro</title>
-  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="shortcut icon" href="img/logoF.png" />
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/css.css">
 
   <style type="text/css">
-  body{
-    background:url("./img/back.jpg");
-    background-size:100%;
-    background-repeat:no-repeat;
-    background-attachment: fixed;
-  }
-  
-</style>
+    body{
+      background:url("./img/back.jpg");
+      background-size:100%;
+      background-repeat:no-repeat;
+      background-attachment: fixed;
+    }
+
+  </style>
 
 </head>
 <body>
@@ -47,7 +49,7 @@ while($row = mysqli_fetch_assoc($result)){
     <br>
     <div class="jumbotron">
       <center><h4 class="form">Editar Conta</h4></center> 
-      
+
       <p class="form"><b>Campos com * são obrigatórios</b></p>
       <form method="post" action="php/_edita_usu.php">
 
@@ -110,7 +112,7 @@ while($row = mysqli_fetch_assoc($result)){
 
         <div class="form-group">
           <label class="form">Senha *</label>
-          <input type="password" class="form-control" name="senha" placeholder="Insira sua Senha *" value="<?php echo($row['senha']);?>" required autocomplete="off">
+          <input type="password" class="form-control" name="senha" placeholder="Insira sua Senha *" required autocomplete="off">
         </div>
 
         <div class="form-group">

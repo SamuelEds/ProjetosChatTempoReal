@@ -21,7 +21,9 @@ if($senha == $repitasenha){
 
 	}else{
 
-		$sql = "INSERT INTO usuarios (nomecompleto,nomeusuario,pais,genero,email,senha) VALUES ('$nome','$nomeu','$pais','$genero','$email',$senha)";
+		$senha = password_hash($senha, PASSWORD_DEFAULT);
+
+		$sql = "INSERT INTO usuarios (nomecompleto,nomeusuario,pais,genero,email,senha) VALUES ('$nome','$nomeu','$pais','$genero','$email', '$senha')";
 
 		$result = mysqli_query($con,$sql);
 		if(mysqli_insert_id($con)){
@@ -39,6 +41,9 @@ if($senha == $repitasenha){
 
 }else if($nomeu = "" && $email = "" && $senha  	 = "" && $repitasenha = ""){
 	echo "<script>alert('Alguns campos não foram preenchidos/Campos incorretos');</script>";
+	echo "<script>javascript:window.location='/ProjetosChatTempoReal/formulario.php';</script>";
+}else if($senha != $repitasenha){
+	echo "<script>alert('Senha não coincidem');</script>";
 	echo "<script>javascript:window.location='/ProjetosChatTempoReal/formulario.php';</script>";
 }
 

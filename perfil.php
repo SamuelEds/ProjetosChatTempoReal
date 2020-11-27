@@ -18,7 +18,7 @@ while($row = mysqli_fetch_assoc($result)){
 	<head>
 		
 		<title>Perfil</title>
-		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 		<link rel="shortcut icon" href="img/logoF.png" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"

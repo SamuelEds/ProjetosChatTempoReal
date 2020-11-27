@@ -41,3 +41,9 @@ link de vídeos para geração de relatórios com mPDF (biblioteca PHP para gera
 - Tutorial 01: https://www.youtube.com/watch?v=aiydKZHlBtw 
 - Tutorial 02: https://www.youtube.com/watch?v=z0qDMVF43yM
 - Tutorial 03: https://www.youtube.com/watch?v=WTqu8ufEcA8
+
+-----------------------------------------------------------------------------------------------
+
+Atualização 21/06/2020
+
+Modificação de dados do moderador.

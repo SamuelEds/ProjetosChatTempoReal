@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 	<title>Entrar em uma conta</title>
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="shortcut icon" href="img/logoF.png" />
@@ -30,7 +30,7 @@
 		width: 100%;
 		border: 2px solid #aaa;
 		border-radius: 4px;
-		margin: 8px 0;
+		margin: 10px 0;
 		outline: none;
 		padding: 8px;
 		box-sizing: border-box;
@@ -90,10 +90,11 @@
 >
 <script type="text/javascript" src="js/bootstrap.js"></script>
 
+
 <div class="row">
 	<div class="col-md-6 tela1">
 
-
+		<br><br><br>
 		<center>
 			<br>
 			<div style="border: 3px black solid; border-radius: 10px; margin-left: 30px; background-color: white; height: 650px;">
@@ -135,7 +136,7 @@
 
 			<form class="px-4 py-3" method="post" action="php/valida.php" style=" background-color: white; border: 3px black solid; border-radius: 3px; margin-top: 200px; margin-right: 20px;">
 
-				<div class="tittle" style="background-color: lightblue;"><h1><b>LOGIN</b></h1></div>
+				<div class="tittle" style="background-color: lightblue;"><h1><b>LOGIN - <a href="formulario.php">CADASTRE-SE</a></b></h1></div>
 				<br>
 				<div class="inputWithIcon inputIconBg">
 

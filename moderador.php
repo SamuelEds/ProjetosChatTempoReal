@@ -10,21 +10,37 @@ $result = mysqli_query($con,$sql);
 <html>
 <head>
 	<title>Tela de Moderação</title>
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<link rel="shortcut icon" href="img/logoF.png" />
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<style type="text/css">
+	body{
+		margin-left: 5vh;
+		margin-right: 5vh;
+		background:url("./img/back3.jpg");
+		background-color: #e3f2fd;
+		background-repeat:no-repeat;
+		background-attachment: fixed;
+		background-size: 100%;
+	}
 	nav{
 
-		margin-left: 680px;
+		margin-left: 95vh;
 
+	}
+	th{
+		text-align: center;
+	}
+	td{
+		background-color: white;
+		text-align: center;
 	}
 </style>
 </head>
 <body>
-
+	<br>
 	<div class="card" style="width: 100%; text-align: center;">
 		<div class="card-body">
 			<h5 class="card-title">Este Painel está permitido apenas aos <b>Moderadores</b> do Sistema. Qualquer ato de desrespeito (Usuários - Staff ou Staff - Usuários) poderá ser reportado ao ADM do Sistema</h5>
@@ -32,7 +48,7 @@ $result = mysqli_query($con,$sql);
 			<a href="index.php" class="btn btn-primary">Voltar para a Tela de Início</a>
 		</div>
 	</div>
-
+	<br>
 	<table class="table">
 		<thead class="thead-dark">
 			<tr>
@@ -51,7 +67,7 @@ $result = mysqli_query($con,$sql);
 			$pagina_a = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);
 			$pagina = (!empty($pagina_a)) ? $pagina_a : 1;
 
-			$qnt_result = 2;
+			$qnt_result = 4;
 
 			$inicio = ($qnt_result * $pagina) - $qnt_result;
 
@@ -67,38 +83,38 @@ $result = mysqli_query($con,$sql);
 				<td>". $row_usuario['pais'] ."</td>
 				<td>". $row_usuario['genero'] . "</td>";
 
-			
+				
 
 
-			?>
+				?>
 
-			<td>
+				<td>
 
-				<p>
-					<button class='btn btn-danger' type='button' data-toggle='collapse' data-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'>
-						Reportar
-					</button>
-				</p>
+					<p>
+						<button class='btn btn-danger' type='button' data-toggle='collapse' data-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'>
+							Reportar
+						</button>
+					</p>
 
-				<form action='php/reportUser.php?id=<?php echo $row_usuario['id'];?>&&nomec=<?php echo $row_usuario['nomecompleto'];?>&&nomeu=<?php echo $row_usuario['nomeusuario'];?>&&email=<?php echo $row_usuario['email'];?>&&pais=<?php echo $row_usuario['pais'];?>&&genero=<?php echo $row_usuario['genero'];?>' method='post'>
+					<form action='php/reportUser.php?id=<?php echo $row_usuario['id'];?>&&nomec=<?php echo $row_usuario['nomecompleto'];?>&&nomeu=<?php echo $row_usuario['nomeusuario'];?>&&email=<?php echo $row_usuario['email'];?>&&pais=<?php echo $row_usuario['pais'];?>&&genero=<?php echo $row_usuario['genero'];?>&&foto=<?php echo($row_usuario['foto']); ?>' method='post'>
 
-					<div class='collapse' id='collapseExample'>
-						<div class='card card-body'>
-							<div class='form-group'>
-								<input type='text' class='form-control' id='exampleFormControlInput1' name='motivo' required placeholder='Motivo aqui...'>
+						<div class='collapse' id='collapseExample'>
+							<div class='card card-body'>
+								<div class='form-group'>
+									<input type='text' class='form-control' id='exampleFormControlInput1' name='motivo' required placeholder='Motivo aqui...'>
 
-							</div> 
-							<button class='bnt btn-sm btn-danger' type='submit'> Enviar </button>
+								</div> 
+								<button class='bnt btn-sm btn-danger' type='submit'> Enviar </button>
+							</div>
 						</div>
-					</div>
 
-				</form>
+					</form>
 
 
-			</td>
-		</tr>
+				</td>
+			</tr>
 
-		<?php 
+			<?php 
 
 		};
 

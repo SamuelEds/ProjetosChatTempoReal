@@ -13,7 +13,7 @@ $repitasenha = $_POST['repitasenha'];
 
 if($senha == $repitasenha  ) {
 
-
+	$senha = password_hash($senha, PASSWORD_DEFAULT);
 	$sql = "UPDATE usuarios SET nomecompleto = '$nome', nomeusuario = '$nomeu', pais = '$pais', genero = '$genero', senha = '$senha' WHERE email = '$email'"; 
 
 	$result = mysqli_query($con,$sql);
@@ -28,7 +28,7 @@ if($senha == $repitasenha  ) {
  }
 }else{
   echo "<script>alert('Senhas não coincidem!!');</script>";
-  echo "<script>javascript:window.location='/ProjetosChatTempoReal/perfil.php';</script>";
+  echo "<script>javascript:window.location='/ProjetosChatTempoReal/editar.php';</script>";
 }
 
 ?>

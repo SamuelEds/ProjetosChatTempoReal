@@ -58,7 +58,7 @@ CREATE TABLE `mensagens` (
   `hora` varchar(50) DEFAULT NULL,
   `ip` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `mensagens` (
 
 LOCK TABLES `mensagens` WRITE;
 /*!40000 ALTER TABLE `mensagens` DISABLE KEYS */;
-INSERT INTO `mensagens` VALUES (1,'Samuquis','dasdada','samuel@gmail.com','King.jpg','19:11:32','::1'),(2,'FN','dmsadmsado','fr@gmail.com','elfo.jpg','19:17:27','::1'),(3,'FN','Kkakakaakak, mds','fr@gmail.com','elfo.jpg','19:17:36','::1'),(4,'FN','dsadasd','fr@gmail.com','elfo.jpg','19:17:42','::1'),(5,'FN','dasdasd','fr@gmail.com','elfo.jpg','19:18:28','::1'),(6,'FN','MS, QUE CHATI  Ã‰ESSE?','fr@gmail.com','elfo.jpg','19:18:49','::1'),(7,'FN','Oap meus colegas, como vÃ£o?, tudo bÃ£o?','fr@gmail.com','elfo.jpg','19:49:44','::1');
+INSERT INTO `mensagens` VALUES (1,'Samuelico','Opa','samuel@gmail.com',NULL,'18:44:14','::1'),(2,'Samuelico','Como vÃ£o meus amigos','samuel@gmail.com',NULL,'18:44:35','::1'),(3,'Samuelico','Tudo bÃ£o','samuel@gmail.com',NULL,'18:44:44','::1'),(4,'Denilson','Eae meu chapa','denis@gmail.com',NULL,'18:46:09','::1'),(5,'Samuelico','opa','samuel@gmail.com','elfo.jpg','19:27:06','::1'),(6,'opa','hey oh','samuquinha@gmail.com',NULL,'11:33:54','::1');
 /*!40000 ALTER TABLE `mensagens` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,9 +81,10 @@ DROP TABLE IF EXISTS `moderador`;
 CREATE TABLE `moderador` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
   `senha` varchar(8) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,7 +93,7 @@ CREATE TABLE `moderador` (
 
 LOCK TABLES `moderador` WRITE;
 /*!40000 ALTER TABLE `moderador` DISABLE KEYS */;
-INSERT INTO `moderador` VALUES (1,'Samuel','123');
+INSERT INTO `moderador` VALUES (1,'Yara','yara@gmail.com','123'),(2,'Samuel Edson Ribeiro Sampaio','samueledsonmoder@gmail.com','123'),(3,'sas','sa@gmail.com','123'),(4,'wewqeq','eqeqw@gmail.com','2131231'),(5,'dqwdqwdq','dqdw@gmail.com','123'),(6,'q342342','eqewqwe@gmail.com','123'),(7,'sla','sla@gmail.com','123');
 /*!40000 ALTER TABLE `moderador` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +114,7 @@ CREATE TABLE `report` (
   `motivo` text NOT NULL,
   `foto` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +123,7 @@ CREATE TABLE `report` (
 
 LOCK TABLES `report` WRITE;
 /*!40000 ALTER TABLE `report` DISABLE KEYS */;
-INSERT INTO `report` VALUES (2,'Sarasa','Sarasa','PaÃ­s da AmÃ©rica do Sul','M','sa@gmail.com','Falando PalavrÃ£o',''),(3,'Maranda','Marandai','PaÃ­s da AmÃ©rica Central','M','m@gmail.com','Fazendo merda',''),(7,'Guilherme','GUI GUI','Brasil','M','g@gmail.com','Esse cara Ã© muito cara','');
+INSERT INTO `report` VALUES (2,'Sarasa','Sarasa','PaÃ­s da AmÃ©rica do Sul','M','sa@gmail.com','Fica dando Dicas de Hacker','kratos.jpg');
 /*!40000 ALTER TABLE `report` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +140,7 @@ CREATE TABLE `solicitacao` (
   `email_para` varchar(100) NOT NULL,
   `amigo` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +149,7 @@ CREATE TABLE `solicitacao` (
 
 LOCK TABLES `solicitacao` WRITE;
 /*!40000 ALTER TABLE `solicitacao` DISABLE KEYS */;
-INSERT INTO `solicitacao` VALUES (1,'samuel@gmail.com','fr@gmail.com',1);
+INSERT INTO `solicitacao` VALUES (1,'samuel@gmail.com','fr@gmail.com',1),(2,'samuquinha@gmail.com','samuel@gmail.com',0);
 /*!40000 ALTER TABLE `solicitacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -166,10 +167,10 @@ CREATE TABLE `usuarios` (
   `pais` varchar(200) DEFAULT NULL,
   `genero` varchar(10) DEFAULT NULL,
   `email` varchar(200) NOT NULL,
-  `senha` varchar(9) NOT NULL,
+  `senha` varchar(200) NOT NULL,
   `foto` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -178,7 +179,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Samuel Edson Ribeiro Sampaio','Samuquis','Brasil','M','samuel@gmail.com','123','King.jpg'),(2,'Sarasa','Sarasa','PaÃ­s da AmÃ©rica do Sul','M','sa@gmail.com','123','kratos.jpg'),(3,'Maranda','Marandai','PaÃ­s da AmÃ©rica Central','M','m@gmail.com','123','banner modelo.png'),(5,'Ryan da Silva Games','Mininu Ryan','BolÃ­via','M','ry@gmail.com','123',NULL),(6,'Fernando Noranho','FN','Argentina','Outro','fr@gmail.com','123','elfo.jpg'),(7,'Guilherme','GUI GUI','Brasil','M','g@gmail.com','123','');
+INSERT INTO `usuarios` VALUES (1,'Samuel Edson Ribeiro Sampaio','Samuelico','Brasil','M','samuel@gmail.com','$2y$10$mPXzCjpgpP1xB0OAfjd0N.26t6hxxvOmYi0Dd2PjmWNkxRG59Uy5S','elfo.jpg'),(2,'Denis','Denilson','Argentina','M','denis@gmail.com','$2y$10$8d5uBxB5Sy/E6n.ejne.2u2o6NUuLRlmCm1lN0WG3kPVw3.cWJH5O',NULL),(4,'opa','Sei la','Argentina','M','samuquinh@gmail.com','$2y$10$4PX1NlhYXvJ7u8YiW/v7j.L3BeT9AP7fH7ERU7vdeg14hiKpeuFdW',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -191,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-20 16:50:50
+-- Dump completed on 2020-11-27 11:38:40

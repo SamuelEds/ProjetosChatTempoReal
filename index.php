@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
 	<title>Global Chat - Página Principal</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<link rel="shortcut icon" href="img/logoF.png" />
 	<link rel="stylesheet" href="css/bootstrap.css">
@@ -40,7 +40,7 @@
 
         <img src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519579-075_Globe-512.png" style="width: 66px;">
         <br><br>
-        <i>Conversar pessoas do mundo todo, fazer novas amizades, explorar diversas culturas e partilhar de mesmos interesses com outras pessoas.</i>
+        <i>Conversar com pessoas do mundo todo, fazer novas amizades, explorar diversas culturas e partilhar de mesmos interesses com outras pessoas.</i>
       </blockquote>
 
 

@@ -3,6 +3,7 @@ session_start();
 
 include("conexao.php");
 
+
 if(isset($_GET['email'])){
 	$_SESSION['email'] = $_GET['email']; 
 }
@@ -27,10 +28,14 @@ $result4 = mysqli_query($con,$sql4);
 $sql = "DELETE FROM usuarios WHERE email = '$email'"; 
 $result = mysqli_query($con,$sql);
 
-if(mysqli_affected_rows($con)){
+if(mysqli_affected_rows($con) && !isset($_GET['adm'])){
 	$_SESSION['nome'] = null;
 	echo "<script>alert('Conta Excluída com Sucesso!!');</script>";
 	echo "<script>javascript:window.location='/ProjetosChatTempoReal/login.php';</script>";
+}else if(mysqli_affected_rows($con) && isset($_GET['adm'])){
+	$_SESSION['nome'] = null;
+	echo "<script>alert('Conta Excluída com Sucesso!!');</script>";
+	echo "<script>javascript:window.location='/ProjetosChatTempoReal/adm.php';</script>";
 }else{
 	$_SESSION['nome'] = null;
 	echo "<script>alert('Algo deu Errado!!');</script>";

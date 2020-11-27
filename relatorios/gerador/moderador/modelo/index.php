@@ -4,10 +4,11 @@
 function pegarModelo($moderador){
 
 $hoje = date('d/m/Y');
-$modelo = '<body>
+$modelo = '
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   </head>
+<body>
   <header class="clearfix">
     <div id="logo">
       <img src="img/logoF.png" width="78" height="78">

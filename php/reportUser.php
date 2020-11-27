@@ -9,6 +9,7 @@ $pais = $_GET['pais'];
 $genero = $_GET['genero'];
 $email = $_GET['email'];
 $motivo = $_POST['motivo'];
+$foto = $_GET['foto'];
 
 if(isset($motivo) && (isset($_GET['id']) && isset($_GET['nomec']) && isset($_GET['nomeu']) && isset($_GET['pais']) && isset($_GET['genero']) && isset($_GET['email']))){
 

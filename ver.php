@@ -11,7 +11,7 @@ $email = $_SESSION['email'];
 <html>
 <head>
 	<title>Carregando...</title>
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script type="text/javascript" src="js/bootstrap.js"></script>

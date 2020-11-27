@@ -35,18 +35,15 @@ $get = $comando->get_result();
 		margin-right: 2vh;
 		background:url("./img/back3.jpg");
 		background-color: #e3f2fd;
-		background-attachment: fixed;
+		background-position: center;
 		background-repeat: no-repeat;
-		background-size: 100%;
+		background-size: cover;
 	}
 	.minhafoto {
 		width: 50px;
 		height: 50px;
 		border-radius: 50%;
 
-	}
-	nav{
-		margin-left: 40%;
 	}
 	th{
 		text-align: center;
@@ -127,7 +124,7 @@ $get = $comando->get_result();
 						<li class="nav-item"><a href="./relatorios/gerador/reports/reportRELATORIO.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-archive text-light fa-lg mr-3"></i>Reportados</a></li>
 						<li class="nav-item"><a href="./relatorios/gerador/moderador/relatorioMODERADOR.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-archive text-light fa-lg mr-3"></i>Moderadores</a></li>
 						<li class="nav-item"><a href="./relatorios/gerador/usuarios/relatorioUSUARIOS.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-archive text-light fa-lg mr-3"></i>Usuários</a></li>
-						<li class="nav-item"><a href="paginas/cadastro/cadastro.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-users text-light fa-lg mr-3"></i>Cadastro de moderadores</a></li>
+						<li class="nav-item"><a href="paginas/cadastro/cadastro.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-archive text-light fa-lg mr-3"></i>Cadastro de moderadores</a></li>
 					</ul>
 				</div>
 			</div>
@@ -147,7 +144,7 @@ $get = $comando->get_result();
 				</div>
 				<br>
 				<br>
-				
+
 				<div class="alert alert-secondary" role="alert">
 					<h3 style="font-family: 'Arial Black';">LISTA DOS USUÁRIOS CADASTRADOS NO SITE</h3>
 				</div>
@@ -166,75 +163,24 @@ $get = $comando->get_result();
 							</thead>
 							<tbody>
 
-								<?php 
-
-			$pagina_a = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);
-			$pagina = (!empty($pagina_a)) ? $pagina_a : 1;
-
-			$qnt_result = 5;
-
-			$inicio = ($qnt_result * $pagina) - $qnt_result;
-
-			$resul_u = "SELECT * FROM usuarios LIMIT $inicio, $qnt_result";
-			$resultado = mysqli_query($con, $resul_u);
-			while ($row_usuario = mysqli_fetch_assoc($resultado)){
-				echo "
-				<tr>
-				<td>". $row_usuario['id'] ."</td>
-				<td>". $row_usuario['nomecompleto'] ."</td>
-				<td>". $row_usuario['nomeusuario']."</td>
-				<td>". $row_usuario['pais'] ."</td>
-				<td>". $row_usuario['genero'] . "</td>
-				<td>". $row_usuario['email'] ."</td>";
-			?>
-
-					<td><div class="btn-group" role="group"><a href="php/_exclui_usu.php?email=<?php echo $row_usuario['email']; ?>&&adm=1" class="btn btn-danger">Excluir</a> <a href="editar.php?email=<?php echo $row_usuario['email']; ?>" class="btn btn-success">Atualizar</a></div></td>
-					</div>
-				</td>
-			</tr>
-
-		<?php };
-
-  			//paginação
-			$result_p = "SELECT COUNT(id) AS num_result FROM usuarios";
-			$result_pg = mysqli_query($con, $result_p);
-			$row_p = mysqli_fetch_assoc($result_pg);
-			/*echo $row_p['num_result'];*/
-			$quantipg = ceil($row_p['num_result']/$qnt_result);
-
-  			//Limitar
-			$max_links = 2; ?>
+								<?php while($row = mysqli_fetch_assoc($result)){ ?>
 
 
-	</tbody>
-</table>
+									
+									<tr>
+										<td scope="row"><?php echo $row['id']; ?></td>
+										<td><?php echo $row['nomecompleto']; ?></td>
+										<td><?php echo $row['nomeusuario']; ?></td>
+										<td><?php echo $row['pais']; ?></td>
+										<td><?php echo $row['genero']; ?></td>
+										<td><?php echo $row['email']; ?></td>
+										<td><div class="btn-group" role="group"><a href="php/_exclui_usu.php?email=<?php echo $row['email']; ?>&&adm=1" class="btn btn-danger">Excluir</a> <a href="editar.php?email=<?php echo $row['email']; ?>" class="btn btn-success">Atualizar</a></div></td>
+									</tr>
 
-		<?php 
+								<?php }; ?>
 
-		echo "
-		<nav aria-label='Page navigation example'>
-		<ul class='pagination'>
-		<li class='page-item'>
-		<a class='page-link' href='adm.php?pagina=1'><span aria-hidden='true'>&laquo;</span></a>";
-
-		for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
-			if ($pag_ant >= 1) {
-				echo "<li class='page-item'><a class='page-link' href='adm.php?pagina=$pag_ant'> $pag_ant </a>";
-			}
-		}
-
-		echo "<li class='page-item'><a class='page-link'>$pagina</a></li>";
-
-		for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
-			if ($pag_dep <= $quantipg) {
-				echo "<li class='page-item'><a class='page-link' href='adm.php?pagina=$pag_dep'> $pag_dep </a>";
-			}
-		}
-
-		echo"<li class='page-item'><a class='page-link' href='adm.php?pagina=$quantipg'><span aria-hidden='true'>&raquo;</span></a>";
-
-		?>
-
+							</tbody>
+						</table>
 					</div>
 					<br>
 
@@ -257,79 +203,23 @@ $get = $comando->get_result();
 								</tr>
 							</thead>
 							<tbody>
-								<?php 
-
-			$pagina_a = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);
-			$pagina = (!empty($pagina_a)) ? $pagina_a : 1;
-
-			$qnt_result = 5;
-
-			$inicio = ($qnt_result * $pagina) - $qnt_result;
-
-			$resul_u = "SELECT * FROM report LIMIT $inicio, $qnt_result";
-			$resultado = mysqli_query($con, $resul_u);
-			while ($row_report = mysqli_fetch_assoc($resultado)){
-				echo "
-				<tr>
-				<td>". $row_report['id'] ."</td>
-				<td>". $row_report['nomecompleto'] ."</td>
-				<td>". $row_report['nomeusuario']."</td>
-				<td>". $row_report['pais'] ."</td>
-				<td>". $row_report['genero'] . "</td>
-				<td>". $row_report['email'] ."</td>
-				<td>". $row_report['motivo'] ."</td>";
-			?>
-
-										
-				<td><img class="minhafoto" src="<?php if($row_report['foto'] != null){echo('/ProjetosChatTempoReal/uploads/'.$row_report['foto']);}else{ echo('/ProjetosChatTempoReal/img/login.png');} ?>"></td>
-				<td><div class="btn-group" role="group"><a href="php/_exclui_usu.php?email=<?php echo $row_report['email']; ?>&&adm=1" class="btn btn-danger">Excluir</a><a href="php/retirarReport.php?email=<?php echo $row_report['email']; ?>&&adm=1" class="btn btn-warning">Retirar</a></div></td>
-				</tr>
-
-								<?php }
-
-  			//paginação
-			$result_p = "SELECT COUNT(id) AS num_result FROM report";
-			$result_pg = mysqli_query($con, $result_p);
-			$row_p = mysqli_fetch_assoc($result_pg);
-			/*echo $row_p['num_result'];*/
-			$quantipg = ceil($row_p['num_result']/$qnt_result);
-
-  			//Limitar
-			$max_links = 2; ?>
+								<?php while($row = mysqli_fetch_assoc($result2)){ ?>
 
 
-	</tbody>
-</table>
+									
+									<tr>
+										<td scope="row"><?php echo $row['id']; ?></td>
+										<td><?php echo $row['nomecompleto']; ?></td>
+										<td><?php echo $row['nomeusuario']; ?></td>
+										<td><?php echo $row['pais']; ?></td>
+										<td><?php echo $row['genero']; ?></td>
+										<td><?php echo $row['email']; ?></td>
+										<td><?php echo $row['motivo']; ?></td>
+										<td><img class="minhafoto" src="<?php if($row['foto'] != null){echo('/ProjetosChatTempoReal/uploads/'.$row['foto']);}else{ echo('/ProjetosChatTempoReal/img/login.png');} ?>"></td>
+										<td><div class="btn-group" role="group"><a href="php/_exclui_usu.php?email=<?php echo $row['email']; ?>&&adm=1" class="btn btn-danger">Excluir</a><a href="php/retirarReport.php?email=<?php echo $row['email']; ?>&&adm=1" class="btn btn-warning">Retirar</a></div></td>
+									</tr>
 
-		<?php 
-
-		echo "
-		<nav aria-label='Page navigation example'>
-		<ul class='pagination'>
-		<li class='page-item'>
-		<a class='page-link' href='adm.php?pagina=1'><span aria-hidden='true'>&laquo;</span></a>";
-
-		for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
-			if ($pag_ant >= 1) {
-				echo "<li class='page-item'><a class='page-link' href='adm.php?pagina=$pag_ant'> $pag_ant </a>";
-			}
-		}
-
-		echo "<li class='page-item'><a class='page-link'>$pagina</a></li>";
-
-		for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
-			if ($pag_dep <= $quantipg) {
-				echo "<li class='page-item'><a class='page-link' href='adm.php?pagina=$pag_dep'> $pag_dep </a>";
-			}
-		}
-
-		echo"<li class='page-item'><a class='page-link' href='adm.php?pagina=$quantipg'><span aria-hidden='true'>&raquo;</span></a>";
-
-		
-
-		?>
-
-
+								<?php } ?>
 							</tbody>
 						</table>
 					</div>
@@ -349,70 +239,19 @@ $get = $comando->get_result();
 								</tr>
 							</thead>
 							<tbody>
-								<?php 
-
-			$pagina_a = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);
-			$pagina = (!empty($pagina_a)) ? $pagina_a : 1;
-
-			$qnt_result = 5;
-
-			$inicio = ($qnt_result * $pagina) - $qnt_result;
-
-			$resul_u = "SELECT * FROM moderador LIMIT $inicio, $qnt_result";
-			$resultado = mysqli_query($con, $resul_u);
-			while($dados = mysqli_fetch_assoc($resultado)){
-				echo "
-				<tr>
-					<td>". $dados['id']."</td>
-					<td>". $dados['nome']."</td>
-					<td>". $dados['email']."</td>
-					<td>". $dados['senha']."</td>";
-			?>
-
-					<td>
-						<a class="btn btn-danger" href="paginas/cadastro/php/excluirMod.php?id=<?php echo($dados['id']) ?>&&adm=1">Excluir</a></td>
-				</tr>
-
-								<?php }
-
-  			//paginação
-			$result_p = "SELECT COUNT(id) AS num_result FROM moderador ";
-			$result_pg = mysqli_query($con, $result_p);
-			$row_p = mysqli_fetch_assoc($result_pg);
-			/*echo $row_p['num_result'];*/
-			$quantipg = ceil($row_p['num_result']/$qnt_result);
-
-  			//Limitar
-			$max_links = 2; ?>
+								<?php while($dados = $get->fetch_assoc()){ ?>
 
 
-	</tbody>
-</table>
-		<?php 
+									
+									<tr>
+										<td scope="row"><?php echo $dados['id']; ?></td>
+										<td><?php echo $dados['nome']; ?></td>
+										<td><?php echo $dados['email']; ?></td>
+										<td><?php echo $dados['senha']; ?></td>
+										<td><a class="btn btn-danger" href="paginas/cadastro/php/excluirMod.php?id=<?php echo($dados['id']) ?>&&adm=1">Excluir</a></td>
+									</tr>
 
-		echo "
-		<nav aria-label='Page navigation example'>
-		<ul class='pagination'>
-		<li class='page-item'>
-		<a class='page-link' href='adm.php?pagina=1'><span aria-hidden='true'>&laquo;</span></a>";
-
-		for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
-			if ($pag_ant >= 1) {
-				echo "<li class='page-item'><a class='page-link' href='adm.php?pagina=$pag_ant'> $pag_ant </a>";
-			}
-		}
-
-		echo "<li class='page-item'><a class='page-link'>$pagina</a></li>";
-
-		for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
-			if ($pag_dep <= $quantipg) {
-				echo "<li class='page-item'><a class='page-link' href='adm.php?pagina=$pag_dep'> $pag_dep </a>";
-			}
-		}
-
-		echo"<li class='page-item'><a class='page-link' href='adm.php?pagina=$quantipg'><span aria-hidden='true'>&raquo;</span></a>";
-
-		?>
+								<?php } ?>
 							</tbody>
 						</table>
 					</div>

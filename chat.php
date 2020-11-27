@@ -26,7 +26,7 @@ setcookie('nome',$nome);
 	<title>Chat</title>
 	<link rel="shortcut icon" href="img/logoF.png" />
 
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
 	<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
@@ -83,7 +83,7 @@ setcookie('nome',$nome);
 
 				<div class="col-md-12">
 
-					<form method="POST" action="enviar.php" style=" position: absolute; margin-left: 140px; margin-bottom: 10px;" id="meufrm">
+					<form method="POST" action="enviar.php" style="  margin-left: 140px; margin-bottom: -60px;" id="meufrm">
 
 						<div class="input-group chat-form " >
 							
